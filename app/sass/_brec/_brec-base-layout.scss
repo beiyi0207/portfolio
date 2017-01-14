@@ -1,0 +1,211 @@
+/**
+ *
+ * brec-base-layout.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * This file defines the layout of a page. It is mobile first, and use media queries to define
+ * the layouts for medium-screen and large-screen devices.
+ *
+ * Example:
+ * <div class="brec-container brec-container--app">
+ *   <header class="brec-page-header"></header>
+ *   <nav class="brec-main-nav"></nav>
+ *   <div class="brec-container brec-container--global">
+ *    <main class="brec-main"></main>
+ *    <aside class="brec-aside"></aside>
+ *  </div>
+ *  <footer class="brec-page-footer"></footer>
+ * </div>
+ *
+ */
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.brec-float--left {
+  float: left;
+}
+
+.brec-float--right {
+  float: right;
+}
+
+.brec-hidden {
+  display: none;
+}
+
+.brec-page-header {
+  background: $page-header-background-color;
+  color: $page-header-text-color;
+
+  @include flexbox;
+  @include align-items($value: flex-start);
+
+  width: calc(100% - #{$default-main-nav-width});
+  height: auto;
+
+  position: relative;
+  left: $default-main-nav-width;
+
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.brec-page-header--off {
+  padding: 0.5em 0 0 0.5em;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-page-header {
+    @include flexbox;
+
+    width: 100%;
+    height: $large-page-header-height;
+
+    position: relative;
+    left: 0;
+  }
+
+  .brec-page-header--off {
+    display: none;
+  }
+}
+
+
+
+.brec-main-nav {
+  font-family: 'proxima-nova-light';
+  background: $main-nav-background-color;
+
+  @include flexbox;
+  @include flex-direction($value: column);
+
+  width: $default-main-nav-width;
+  min-height: 100%;
+
+  position: absolute;
+  top: 0;
+  z-index: 20;
+
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav {
+    @include flexbox;
+    @include flex-direction($value: row);
+    @include justify-content($value: space-between);
+    @include flex-wrap($value: wrap);
+    width: initial;
+    height: initial;
+    min-height: $large-main-nav-height;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+.brec-main {
+  background: $default-background-color;
+  padding: $gutter-width / 4;
+  position: relative;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-main {
+    width: 100%;
+    padding: $gutter-width / 4 $gutter-width $gutter-width / 4 $gutter-width / 2;
+  }
+
+  .brec-main--no-aside {
+    padding: $gutter-width / 4;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main {
+    width: $large-main-width;
+    padding: $gutter-width / 4 $gutter-width / 2;
+  }
+
+  .brec-main--no-aside {
+    width: 100%;
+  }
+
+  .brec-main--with-sidebar {
+    @include flexbox;
+    @include align-items($value: stretch);
+    padding: 0;
+  }
+}
+
+
+
+.brec-aside {
+  background: $aside-background-color;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-aside {
+    position: absolute;
+    right: (-$medium-aside-width);
+
+    width: $medium-aside-width;
+    height: 100%;
+
+    z-index: 20;
+
+    @include transition (right .5s);
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-aside {
+    width: $large-aside-width;
+  }
+}
+
+
+
+.brec-page-footer {
+  font-family: 'proxima-nova-light';
+  text-align: center;
+  font-size: 0.9em;
+
+  background: $page-footer-background-color;
+  color: $page-footer-text-color;
+
+  width: calc(100% - #{$default-main-nav-width});
+
+  position: relative;
+  left: $default-main-nav-width;
+
+  padding: 1em 0;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-page-footer {
+    @include flexbox;
+    @include justify-content($value: space-between);
+    @include align-items($value: center);
+
+    width: 100%;
+
+    position: relative;
+    left: 0;
+
+    padding: 12.5px 25px;
+  }
+}

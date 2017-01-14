@@ -1,0 +1,584 @@
+/**
+ *
+ * brec-component-buttons.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * All buttons and button-like links use brec-btn as block name.
+ *
+ * Example:
+ * <button class="brec-btn">Default Button</button>
+ *
+ * <a class="brec-btn" href="">Default-Button-Look Link</a>
+ *
+ *
+**/
+
+
+.brec-btn {
+  font-family: $base-font-light;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: none;
+  outline: none;
+
+  padding: $base-font-size/2 $gutter-width/2;
+
+  cursor: pointer;
+  @include user-select(none);
+}
+
+.brec-btn,
+.brec-btn:link,
+.brec-btn:visited {
+  background: $button-default-background-color;
+  color: $button-default-color;
+  border: solid 1px $button-default-background-color;
+  border-bottom-color: darken($button-default-background-color, 10%);
+}
+
+.brec-btn:hover {
+  background: lighten($button-default-background-color, 10%);
+}
+
+.brec-btn:active {
+  background: lighten($button-default-background-color, 15%);
+}
+
+.brec-btn:focus {
+  background: lighten($button-default-background-color, 10%);
+  outline: solid 2px $focus-outline-color;
+  outline-offset: -2px;
+}
+
+/* Primary Button
+ *
+ * Example:
+ * <button class="brec-btn brec-btn--primary">Primary Button</button>
+ *
+ * <a class="brec-btn brec-btn--primary" href="">Primary-Button-Look Link</a>
+ *
+ *
+ */
+
+.brec-btn--primary,
+.brec-btn--primary:link,
+.brec-btn--primary:visited {
+  background-color: $button-primary-background-color;
+  color: $button-primary-color;
+  border: solid 1px $button-primary-background-color;
+  border-bottom-color: darken($button-primary-background-color, 10%);
+}
+
+.brec-btn--primary:hover {
+  background: lighten($button-primary-background-color, 10%);
+}
+
+.brec-btn--primary:active {
+  background: lighten($button-primary-background-color, 15%);
+}
+
+.brec-btn--primary:focus {
+  background: lighten($button-primary-background-color, 10%);
+}
+
+
+/* Warning Button
+ *
+ * Example:
+ * <button class="brec-btn brec-btn--warning">Warning Button</button>
+ *
+ * <a class="brec-btn brec-btn--warning" href="">Warning-Button-Look Link</a>
+ *
+ *
+ */
+
+.brec-btn--warning,
+.brec-btn--warning:link,
+.brec-btn--warning:visited {
+  background: $button-warning-background-color;
+  color: $button-warning-color;
+  border: solid 1px $button-warning-background-color;
+  border-bottom-color: darken($button-warning-background-color, 10%);
+}
+
+.brec-btn--warning:hover {
+  background: lighten($button-warning-background-color, 10%);
+}
+
+.brec-btn--warning:active {
+  background: lighten($button-warning-background-color, 15%);
+}
+
+.brec-btn--warning:focus {
+  background: lighten($button-warning-background-color, 10%);
+}
+
+
+/* Disabled Button
+ *
+ * Example:
+ * <button class="brec-btn brec-btn--disabled">Disabled Button</button>
+ *
+ * <a class="brec-btn brec-btn--disabled" href="">Disabled-Button-Look Link</a>
+ *
+ *
+ */
+
+.brec-btn--disabled,
+.brec-btn--disabled:link,
+.brec-btn--disabled:visited {
+  background: none;
+  color: $button-disabled-color;
+  border: solid 1px $button-disabled-border-color;
+}
+
+.brec-btn--disabled:hover {
+  background: none;
+  cursor: not-allowed;
+}
+
+.brec-btn--disabled:active {
+  background: none;
+}
+
+.brec-btn--disabled:focus {
+  background: none;
+  outline: solid 2px $button-disabled-border-color;
+}
+
+
+/* Responsive Button
+ *
+ * A responsive button becomes full width on small screen devices, while keep its default width on middle-or-large-sized screens.
+ *
+ * Example:
+ * <button class="brec-btn brec-btn--primary brec-btn--responsive">Responsive Primary Button</button>
+ *
+ * <a class="brec-btn brec-btn--primary brec-btn--responsive" href="">Responsive Primary-Button-Look Link</a>
+ *
+ *
+ */
+
+.brec-btn--responsive {
+  width: 100%;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-btn--responsive {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-btn--responsive {
+    width: auto;
+  }
+}
+
+/* Flat Button
+ *
+ * A flat button doesn't have background and border colors.
+ *
+ *
+ */
+
+.brec-flat-btn {
+  font-family: $base-font-light;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: inline-block;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  padding: $base-font-size/2 $gutter-width/4;
+
+  cursor: pointer;
+  @include user-select(none);
+}
+
+.brec-flat-btn,
+.brec-flat-btn:link,
+.brec-flat-btn:visited {
+  background: none;
+  color: $button-flat-default-color;
+
+  & [class^="icon-"], [class*=" icon-"], [data-icon]:before {
+    position: relative;
+    top: 0.1ex;
+  }
+}
+
+.brec-flat-btn:hover, .brec-flat-btn.hover {
+  background: $button-flat-default-color;
+  color: $button-flat-default-background-color;
+}
+
+.brec-flat-btn:active {
+  background: $button-flat-default-color;
+  color: $button-flat-default-background-color;
+}
+
+.brec-flat-btn:focus {
+  background: $button-flat-default-color;
+  color: $button-flat-default-background-color;
+  outline: solid 2px $focus-outline-color;
+  outline-offset: -2px;
+}
+
+.brec-flat-btn--warning,
+.brec-flat-btn--warning:link,
+.brec-flat-btn--warning:visited {
+  color: $button-warning-background-color;
+
+  &:hover, &:active {
+    background: $button-warning-background-color;
+    color: $button-warning-color;
+  }
+
+  &:focus {
+    background: $button-warning-background-color;
+    color: $button-warning-color;
+    outline: solid 2px $focus-outline-color;
+    outline-offset: -2px;
+  }
+}
+
+.brec-flat-btn__label--responsive {
+  display: none;
+}
+
+@media screen and (min-width: $medium-screen-width) {
+  .brec-flat-btn__label--responsive {
+    display: inline;
+  }
+}
+
+
+
+
+
+/* Split Button */
+.brec-split-btn {
+  font-family: $base-font-light;
+  font-size: 1em;
+  border: 1px solid $default-border-color;
+  border-radius: 12px;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  @include user-select(none);
+
+  &:after {
+    content: "\f107";
+    font-family: 'icomoon';
+    position: relative;
+    left: 5px;
+    top: 0.2ex;
+  }
+
+  &,
+  &:link,
+  &:visited {
+    background: #fff;
+    color: $button-flat-default-color;
+  }
+
+  &:hover,
+  &.hover {
+    background: $button-flat-default-color;
+    color: $button-flat-default-background-color;
+  }
+
+  &:active {
+    background: $button-flat-default-color;
+    color: $button-flat-default-background-color;
+  }
+
+  &:focus {
+    background: $button-flat-default-color;
+    color: $button-flat-default-background-color;
+    outline: solid 2px $focus-outline-color;
+    outline-offset: -2px;
+  }
+}
+
+.brec-split-btn__menu {
+  display: block;
+  list-style:none;
+  text-align: left;
+  background: $menu-dropdown-background-color;
+  border: 1px solid darken($menu-dropdown-background-color, 10%);
+  box-shadow: 4px 4px 5px darken($menu-dropdown-background-color, 30%);
+  width: auto;
+  margin: 0;
+  padding: 0.5em 0;
+  position: absolute;
+  top: 2.75em;
+  left: 0;
+  z-index: 200;
+}
+
+.brec-split-btn__menu-item {
+  color: $menu-dropdown-color;
+  padding: 0.5em $gutter-width / 2;
+
+  &:hover {
+    cursor: pointer;
+    color: $menu-dropdown-hover-color;
+    background: $menu-dropdown-hover-background-color;
+  }
+}
+
+.brec-split-btn--searchbox {
+  border-right: none;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+
+/* Buttons positioned in the top right of the parent element */
+.brec-header-btn {
+  width: auto;
+  position: absolute;
+  top: 1.25em;
+  right: 0;
+}
+
+.brec-header-btn__text {
+  display: none;
+}
+
+@media screen and (min-width: $medium-screen-landscape-width) {
+  .brec-header-btn {
+    right: $gutter-width / 4;
+  }
+
+  .brec-header-btn__text {
+    display: inline;
+    text-transform: uppercase;
+  }
+}
+
+
+
+/* Checkbox & Radio Buttons
+ *
+ * Example:
+ *
+ * <section class="brec-btn-group">
+ *   <input type="radio" id="option-1" name="options">
+ *   <label class="brec-btn-label" for="option-1">Option 1</label>
+ *   <input type="radio" id="option-2" name="options">
+ *   <label class="brec-btn-label" for="option-2">Option 2</label>
+ * </section>
+ *
+ */
+
+.brec-btn-group {
+  @include flexbox;
+  @include flex-direction($value: column);
+}
+
+.brec-btn-label {
+  margin: 0;
+  font-family: $base-font-light;
+  color: $default-text-color;
+  cursor: pointer;
+  @include user-select($arg: none);
+
+  input[type=checkbox] + &, input[type=radio] + & {
+    border: solid 1px $default-border-color;
+    padding: 5px $gutter-width / 2;
+    background: none;
+    box-shadow: inset 0 1px #fff, 0 1px #fff;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  input[type=checkbox] + & {
+    width: 100%;
+    margin-bottom: 1ex;
+    text-align: left;
+  }
+
+  input[type=radio] + & {
+    width: 100%;
+    text-align: left;
+
+    &:first-of-type {
+      margin-top: 1ex;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  input[type=checkbox] + &:before {
+    display: inline-block;
+    margin: 0 0.5ex 0 -0.5ex;
+    font-family: $icon-font;
+    position: relative;
+    top: 0.2ex;
+  }
+
+  input[type=radio] + &:before {
+    display: inline-block;
+    margin: 0 0.5ex 0 -0.5ex;
+    font-family: $icon-font;
+  }
+
+  input[type=checkbox] + &:before, input[type=radio] + &:before {
+    color: #aaa;
+  }
+
+  input[type=checkbox] + &:before {
+    content: $icon-check-empty;
+  }
+
+  input[type=radio] + &:before {
+    content: $icon-circle-blank;
+  }
+
+  input.checked + & {
+    border-color: $link-color;
+    background: $button-selected-background-color;
+    color: $link-color;
+    z-index: 1;
+  }
+
+  // Keep .checked and :checked separate for IE8
+  input:checked + & {
+    border-color: $link-color;
+    background: $button-selected-background-color;
+    color: $link-color;
+    z-index: 1;
+  }
+
+  input[type=radio].checked + & {
+    position: relative;
+  }
+
+  input[type=radio]:checked + & {
+    position: relative;
+  }
+
+  input[type=checkbox].checked + &:before {
+    content: $icon-check;
+    color: $link-color;
+  }
+
+  input[type=checkbox]:checked + &:before {
+    content: $icon-check;
+    color: $link-color;
+  }
+
+  input[type=radio].checked + &:before {
+    content: $icon-circle + ' ';
+    color: $link-color;
+  }
+
+  input[type=radio]:checked + &:before {
+    content: $icon-circle + ' ';
+    color: $link-color;
+  }
+
+  input[type=checkbox]:focus + &, input[type=radio]:focus + & {
+    box-shadow: 0 0 3px $link-color;
+    outline: solid 2px $link-color-hover;
+    outline-offset: -2px;
+    z-index: 2;
+  }
+}
+
+// Hide radio buttons and checkboxes within button groups
+input[type=checkbox], input[type=radio] {
+  position: absolute;
+  left: -999px;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-btn-group {
+    @include flex-direction($value: row);
+    @include flex-wrap($value: wrap);
+  }
+
+  .brec-btn-label {
+
+    input[type=radio] + & {
+      width: auto;
+      margin-left: -1px;
+      text-align: left;
+
+      &:first-of-type {
+        margin-top: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-btn-group {
+    @include flex-direction($value: row);
+    @include flex-wrap($value: wrap);
+  }
+
+  .brec-btn-label {
+
+    input[type=radio] + & {
+      width: auto;
+      margin-left: -1px;
+      text-align: left;
+
+      &:first-of-type {
+        margin-top: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+/* Small Button */
+.brec-btn--small,
+.brec-flat-btn--small {
+  padding: 0.25em 0.5em;
+}
+
+/* Mini Flat Button (e.g. sorting buttons in the table header) */
+.brec-flat-btn--mini {
+  padding: 0 0.5em;
+  margin: 0;
+}

@@ -1,0 +1,85 @@
+/**
+ *
+ * brec-component-aside.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * This file styles the brec aside.
+ *
+ * Example:
+ * <aside class="brec-aside" id="information">
+ *   <div class="brec-aside-toggle brec-aside-toggle--hide" tabindex="0"></div>
+ *   <div class="brec-aside-content">
+ *     <h1><span class="icon-info-sign"></span> Information</h1>
+ *     <div class="brec-container brec-container--aside-image">
+ *       <img class="brec-image--aside" src="img/logo.png" alt="FPO Hospital" />
+ *     </div>
+ *     <ul>
+ *       <li>Manage existing and request future appointments</li>
+ *       <li>Complete appointment registration online</li>
+ *       <li>Update your insurance information</li>
+ *       <li>Review and pay your hospital bills</li>
+ *     </ul>
+ *   </div>
+ * </aside>
+ *
+**/
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-aside-toggle {
+    display: block;
+    position: absolute;
+    top: $gutter-width / 4;
+    left: -40px;
+    height: 100px;
+    width: 40px;
+    padding: 37px 0;
+    background: #f3f3f3;
+    border-top: solid 1px $default-border-color;
+    border-left: solid 1px $default-border-color;
+    border-bottom: solid 1px $default-border-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: $default-text-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .brec-aside-toggle--hide:before {
+    content: "\f05a";
+    vertical-align: middle;
+    font-family: icomoon;
+    font-size: 25px;
+    color: $aside-toggle-color;
+  }
+
+  .brec-aside-toggle--show:before {
+    content: "\f101";
+    vertical-align: middle;
+    font-family: icomoon;
+    font-size: 25px;
+    color: $aside-toggle-color;
+  }
+}
+
+
+.brec-aside-content {
+  padding: $gutter-width / 2;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-aside-content {
+    height: 100%;
+    padding: $gutter-width / 2;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-aside-content {
+    padding: $gutter-width / 2;
+  }
+}

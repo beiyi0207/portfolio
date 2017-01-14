@@ -1,0 +1,73 @@
+/**
+ *
+ * brec-component-tables.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ *
+**/
+
+.brec-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  & th, td {
+    line-height: 1.5;
+    text-align: left;
+    border: 1px solid $default-table-border-color;
+    padding: 0.75em;
+  }
+
+  & th {
+    vertical-align: top;
+  }
+
+  & td {
+    vertical-align: middle;
+  }
+}
+
+/* A basic table with cell borders */
+.brec-table--basic {
+  border: 1px solid $default-table-border-color;
+}
+
+/* A basic table with bottom order only */
+.brec-table--row-border {
+  border: none;
+
+  & th, td {
+    border: none;
+    border-bottom: 1px solid $default-table-border-color;
+  }
+}
+
+/* Alternative row background color */
+.brec-table--alternative-row {
+  border: none;
+
+  & tr:nth-child(even) {
+    background: #f2f1f0;
+  }
+
+  & th, td {
+    border: none;
+  }
+}
+
+/* A small table */
+.brec-table--small {
+  width: 100%;
+  max-width: $medium-screen-width;
+}
+
+/* Master thead and tfoot (thead/tfoot that has controls, such as sorting, filtering, searching, etc. */
+.brec-table__master-thead {
+  border-bottom: 1px solid $default-border-color;
+}
+
+.brec-table__master-tfoot {
+  border-top: 1px solid $default-border-color;
+}

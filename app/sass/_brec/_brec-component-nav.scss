@@ -1,0 +1,452 @@
+/**
+ *
+ * brec-component-nav.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Various navigations. See Examples below.
+ *
+ *
+**/
+
+
+/**
+ * Skiplinks
+ *
+ * Skiplinks are usually placed as a first child in body. It allows keyboard users to quickly
+ * navigate to the desired section of the page.
+ *
+ * Example:
+ * <body>
+ *  <ul class="brec-skiplinks" id="brec-skiplinks">
+ *    <li class="brec-skiplinks__item"><a href="#main-content" class="brec-link brec-skiplinks__link">To Content</a></li>
+ *    <li class="brec-skiplinks__item"><a href="#main-nav" class="brec-link brec-skiplinks__link">To Main Menu</a></li>
+ *    <li class="brec-skiplinks__item"><a href="#information" class="brec-link brec-skiplinks__link">To Information</a></li>
+ *    <li class="brec-skiplinks__item"><a href="#page-footer" class="brec-link brec-skiplinks__link">To Footer</a></li>
+ *  </ul>
+ *  <div class="brec-container brec-container--app">
+ *    <header class="brec-page-header"></header>
+ *    <nav class="brec-main-nav" id="main-nav"></nav>
+ *    <div class="brec-container brec-container--global">
+ *      <main class="brec-main" id="main-content"></main>
+ *      <aside class="brec-aside" id="information"></aside>
+ *    </div>
+ *    <footer class="brec-page-footer" id="page-footer"></footer>
+ *  </div>
+ * </body>
+ *
+**/
+
+.brec-skiplinks {
+  list-style: none;
+  background: $page-header-background-color;
+
+  @include flexbox;
+
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  z-index: 2;
+
+  margin: 0;
+  padding-left: 1em;
+}
+
+.brec-skiplinks--focused {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.brec-skiplinks__item {
+  padding: 1em;
+}
+
+.brec-skiplinks__item:first-child {
+  padding-left: 0;
+}
+
+
+/**
+ * Main Navigation
+ *
+ *
+ * Example of the basic BREC main navigation:
+ * <header>
+ *   <div class="brec-page-header">
+ *    <button id="brec-main-nav-toggle" type="button" class="brec-main-nav__mobile-toggle brec-main-nav__mobile-toggle--page-header" aria-haspopup="true" aria-expanded="false" aria-owns="brec-main-nav" aria-hidden="false" aria-label="show or hide main menu"></button>
+ *   </div>
+ *
+ *   <nav class="brec-main-nav" id="main-nav" aria-hidden="true">
+ *     <ul class="brec-main-nav__list">
+ *       <li class="brec-main-nav__item">
+ *         <a href="#!" class="brec-main-nav__link brec-main-nav__link--current"><span class="brec-main-nav__icon icon-calendar"></span> Appointments</a>
+ *       </li>
+ *       <li class="brec-main-nav__item">
+ *         <a href="#!" class="brec-main-nav__link"><span class="brec-main-nav__icon icon-dollar-sign"></span> Bills</a>
+ *       </li>
+ *    </ul>
+ *    <ul class="brec-main-nav__list brec-main-nav__list--secondary">
+ *      <li class="brec-main-nav__item">
+ *        <a href="#!" class="brec-main-nav__link"><span class="brec-main-nav__icon icon-lock"></span> Sign Out</a>
+ *      </li>
+ *    </ul>
+ *   </nav>
+ * </header>
+ *
+**/
+
+.brec-main-nav__mobile-toggle {
+  font-size: 1em;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+.brec-main-nav__mobile-toggle--page-header {
+  position: relative;
+  top: -2.5px;
+  margin-right: 1em;
+}
+
+.brec-main-nav__mobile-toggle:before {
+  content: $icon-nav-toggle;
+  font-family: 'icomoon';
+  font-size: 1.5em;
+  color: $page-header-text-color;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__mobile-toggle {
+    display: none;
+  }
+}
+
+
+
+.brec-main-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  font-size: 90%;
+}
+
+.brec-main-nav__list--secondary {
+  border-top: 1px solid darken($main-nav-background-color, 10%);
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__list {
+    @include flexbox;
+    @include align-items($value: stretch);
+    padding: 0 0 0 0.5rem;
+  }
+
+  .brec-main-nav__list--secondary {
+    padding: 0;
+    border-top: none;
+  }
+}
+
+
+
+.brec-main-nav__item {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+}
+
+.brec-main-nav-item--logo {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.brec-main-nav-item--logo img {
+  height: 50px;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__item {
+    @include flexbox;
+    @include align-items($value: center);
+    height: $large-main-nav-height;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-right: 1rem;
+  }
+
+  .brec-main-nav-item--logo {
+    text-align: left;
+    margin: 0;
+  }
+
+  .brec-main-nav-item--logo img {
+    height: 30px;
+  }
+
+  .brec-main-nav__item--compact {
+    margin-right: 0;
+  }
+}
+
+
+
+.brec-main-nav__link,
+.brec-main-nav__link:link,
+.brec-main-nav__link:visited {
+  color: $main-nav-link-color;
+  display: block;
+  width: 100%;
+  padding: 0.625rem 1rem;
+}
+
+.brec-main-nav__link:hover {
+  background: $main-nav-current-link-background-color;
+  color: $main-nav-link-hover-color;
+}
+
+.brec-main-nav__link--current {
+  background: $main-nav-current-link-background-color;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__link,
+  .brec-main-nav__link:link,
+  .brec-main-nav__link:visited  {
+    color: $main-nav-link-color;
+    width: auto;
+    padding: 0.625rem;
+  }
+
+  .brec-main-nav__link:hover {
+    background: $main-nav-current-link-background-color;
+  }
+
+  .brec-main-nav__link--current {
+    background: $main-nav-current-link-background-color;
+  }
+}
+
+
+
+.brec-main-nav__icon {
+  position: relative;
+  top: 0.1ex;
+}
+
+
+/* Dropdown Menu
+ *
+ * Example of Main Navigation with Dropdown Menu:
+ * <nav class="brec-main-nav" id="main-nav" aria-hidden="true">
+ *   <ul class="brec-main-nav__list">
+ *     <li class="brec-main-nav__item brec-main-nav__item--dropdown">
+ *       <a href="#!" class="brec-main-nav__link brec-main-nav__link--dropdown" aria-haspopup="true" aria-expanded="false" aria-owns="dropdown-menu-base" aria-label="show or hide dropdown menu"><span class="brec-main-nav__icon icon-home"></span> Bill Payer</a>
+ *       <ul id="dropdown-menu-base" class="brec-dropdown-nav__list" aria-hidden="true">
+ *         <li class="brec-dropdown-nav__item">
+ *           <a href="#" class="brec-dropdown-nav__link"><span class="brec-dropdown-nav__icon icon-home"></span> Dashboard</a>
+ *         </li>
+ *         <li class="brec-dropdown-nav__item">
+ *           <a href="#" class="brec-dropdown-nav__link"><span class="brec-dropdown-nav__icon icon-user"></span> Profile</a>
+ *         </li>
+ *         <li class="brec-dropdown-nav__item">
+ *           <a href="#" class="brec-dropdown-nav__link"><span class="brec-dropdown-nav__icon icon-file"></span> Activity Log</a>
+ *         </li>
+ *         <li class="brec-dropdown-nav__item">
+ *           <a href="#" class="brec-dropdown-nav__link"><span class="brec-dropdown-nav__icon icon-cog"></span> Settings</a>
+ *         </li>
+ *       </ul>
+ *     </li>
+ *     <li class="brec-main-nav__item">
+ *       <a href="#!" class="brec-main-nav__link"><span class="brec-main-nav__icon icon-calendar"></span> Appointments</a>
+ *     </li>
+ *   </ul>
+ * </nav>
+ *
+ *
+**/
+
+.brec-main-nav__item--dropdown {
+  @include flexbox;
+  @include flex-direction($value: column);
+}
+
+.brec-main-nav__item--dropdown .brec-main-nav__link--current {
+  background: none;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__item--dropdown {
+    @include flexbox;
+    @include flex-direction($value: row);
+  }
+
+  .brec-main-nav__item--dropdown .brec-main-nav__link--current {
+    background: $main-nav-current-link-background-color;
+  }
+}
+
+
+
+.brec-main-nav__link--dropdown {
+  width: 100%;
+}
+
+.brec-main-nav__link--dropdown:after {
+  content: "\f0da";
+  font-family: 'icomoon';
+  color: $main-nav-link-dropdown-indicator;
+  float: right;
+}
+
+.brec-main-nav__link--dropdown-expanded:after {
+  content: "\f0d7";
+  font-family: 'icomoon';
+  color: $main-nav-link-dropdown-indicator;
+  float: right;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-main-nav__link--dropdown {
+    width: auto;
+  }
+
+  .brec-main-nav__link--dropdown:after {
+    content: "\f0d7";
+    font-family: 'icomoon';
+    color: $main-nav-link-dropdown-indicator;
+    position: relative;
+    top: 0.1ex;
+    left: 6px;
+  }
+
+  .brec-main-nav__link--dropdown-expanded:after {
+    content: "\f0d7";
+    font-family: 'icomoon';
+    color: $main-nav-link-dropdown-indicator;
+    position: relative;
+    top: 0.1ex;
+    left: 6px;
+  }
+}
+
+
+
+.brec-dropdown-nav__list {
+  list-style: none;
+  @include flexbox;
+  @include flex-direction($value: column);
+  z-index: 2;
+  padding: 0 1rem 0.5rem;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-dropdown-nav__list {
+    background: $main-nav-current-link-background-color;
+    list-style: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    @include flex-direction($value: column);
+    min-width: $default-main-nav-width;
+    min-height: $large-main-nav-height;
+    position: absolute;
+    top: $large-main-nav-height;
+    left: 0;
+    z-index: 2;
+    padding: 0.5rem 1rem;
+  }
+
+  .brec-dropdown-nav__list--secondary {
+    right: 0;
+    left: auto;
+  }
+}
+
+
+
+.brec-dropdown-nav__link,
+.brec-dropdown-nav__link:link,
+.brec-dropdown-nav__link:visited {
+  color: $main-nav-link-color;
+  display: block;
+  padding: 0.625rem 0.5rem;
+  margin: 0;
+}
+
+.brec-dropdown-nav__link--current {
+  background: $dropdown-current-link-background-color;
+  color: $dropdown-current-link-color;
+}
+
+.brec-dropdown-nav__link:hover {
+  background: $main-nav-link-hover-background-color;
+  color: $main-nav-link-hover-color;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-dropdown-nav__link
+  .brec-dropdown-nav__link:link,
+  .brec-dropdown-nav__link:visited {
+    @include flexbox;
+    @include align-items($value: center);
+    width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  .brec-dropdown-nav__link:hover {
+    background: $dropdown-link-hover-background-color;
+    width: 100%;
+  }
+}
+
+
+.brec-dropdown-nav__icon {
+  position: relative;
+  top: 0.1ex;
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-dropdown-nav__icon {
+    position: relative;
+    top: -0.1ex;
+    padding-right: 0.5em;
+  }
+}
+
+
+/**
+ * Secondary Nav
+ *
+**/
+.brec-nav__list {
+  list-style: none;
+  padding: 0.5em;
+}
+
+.brec-nav__item {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid $default-border-color;
+}
+
+.brec-nav__link,
+.brec-nav__link:link,
+.brec-nav__link:visited {
+  color: $default-text-color;
+  display: block;
+  width: 100%;
+  padding: 0.625rem 1rem;
+}
+
+.brec-nav__link:hover {
+  background: $link-color;
+  color: $main-nav-link-color;
+}
+
+.brec-nav__link--current {
+  background: $link-color;
+  color: $main-nav-link-color;
+}

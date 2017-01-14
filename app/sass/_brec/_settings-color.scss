@@ -1,0 +1,125 @@
+/////// Color Settings ///////////////////
+
+// Page Header
+$page-header-background-color: #f3f3f3 !default;
+$page-header-text-color: #454b50 !default;
+
+// Main Navigation
+$main-nav-background-color: #454b50 !default;
+$main-nav-link-color: #fbfbfb !default;
+
+$main-nav-current-link-background-color: darken($main-nav-background-color, 10%) !default;
+$main-nav-current-link-color: lighten($main-nav-link-color, 10%) !default;
+
+$main-nav-link-hover-background-color: darken($main-nav-background-color, 10%) !default;
+$main-nav-link-hover-color: #00baf2 !default;
+
+// Main Navigation Dropdown Menu
+$main-nav-link-dropdown-indicator: darken($main-nav-link-color, 5%) !default;
+
+$dropdown-background-color: darken($main-nav-background-color, 10%) !default;
+$dropdown-link-color: lighten($main-nav-link-color, 10%) !default;
+
+$dropdown-current-link-background-color: darken($dropdown-background-color, 10%) !default;
+$dropdown-current-link-color: lighten($dropdown-link-color, 10%) !default;
+
+$dropdown-link-hover-background-color: darken($dropdown-background-color, 10%) !default;
+$dropdown-link-hover-color: lighten($main-nav-link-hover-color, 10%) !default;
+
+// Badges in Main Navigation
+$main-nav-badge-background-color: #0090bf !default;
+$main-nav-badge-text-color: #fff !default;
+
+// Badges in Main Navigation Dropdown Menu
+$dropdown-badge-background-color: #0090bf !default;
+$dropdown-badge-text-color: #fff !default;
+
+// Main
+$default-background-color: #fbfbfb !default;
+$default-text-color: #454b50 !default;
+$main-page-header-icon-color: #0090bf !default;
+
+// Aside
+$aside-background-color: #f3f3f3 !default;
+$aside-toggle-color: #828b93 !default;
+
+// Page Footer
+$page-footer-background-color: #454b50 !default;
+$page-footer-link-color: #6bc9f1 !default;
+$page-footer-text-color: #bfbfbf !default;
+
+
+// Accordion
+$accordion-background-color: #dadee0 !default;
+
+// Border
+$default-border-color: #dadee0 !default;
+
+// Buttons
+$button-default-background-color: #c7ced4 !default;
+$button-default-color: #0a5679 !default;
+$button-primary-background-color: #007fb0 !default;
+$button-primary-color: #fff !default;
+$button-warning-background-color: #b35f49 !default;
+$button-warning-color: #fff !default;
+$button-disabled-border-color: #aaa !default;
+$button-disabled-color: #6d6d6d !default;
+
+$button-flat-default-color: #007fb0 !default;
+$button-flat-default-background-color: #fbfbfb !default;
+
+// Content Block
+$content-block-background-color: #f2f1f0 !default;
+
+// Feedbacks
+$highlight-background-color: #ffc !default;
+$success-color: #467928 !default;
+$success-background-color: lighten($success-color, 75%) !default;
+$success-border-color: lighten($success-color, 50%) !default;
+$error-color: #bc3e28 !default;
+$error-background-color: $highlight-background-color !default;
+$error-border-color: lighten($error-color, 50%) !default;
+$warning-color: #005875 !default;
+$warning-background-color: lighten($warning-color, 75%) !default;
+$warning-border-color: lighten($warning-color, 50%) !default;
+$info-color: #005875 !default;
+$info-background-color: lighten($info-color, 75%) !default;
+$info-border-color: lighten($info-color, 25%) !default;
+
+// Focus Outline
+$focus-outline-color: #0090bf !default;
+
+// Form
+$form-select-disabled-color: #bfbfbf !default;
+
+// Headings
+$headings-h1-color: #454b50 !default;
+$headings-h2-color: #687279 !default;
+$headings-h3-color: #454b50 !default;
+
+// Links
+$link-color: #007fb0 !default;
+$link-color-hover: #00baf2 !default;
+
+// Menu
+$menu-background-color: #f2f1f0 !default;
+$menu-dropdown-background-color: #fbfbfb !default;
+$menu-dropdown-color: #007fb0 !default;
+$menu-dropdown-hover-background-color: $button-primary-background-color !default;
+$menu-dropdown-hover-color: $button-primary-color !default;
+
+// Pagination
+$pagination-link-border-color: rgba(0, 144, 191, 0.2);
+$pagination-link-text-color-hover: #fff;
+
+// Progress Bar
+$progress-bar-default-color: #0090bf !default;
+
+// Radio Buttons and Checkbox Buttons
+$button-selected-background-color: lighten($link-color, 60%) !default;
+
+// Tables
+$default-table-border-color: lighten($default-text-color, 50%) !default;
+
+
+

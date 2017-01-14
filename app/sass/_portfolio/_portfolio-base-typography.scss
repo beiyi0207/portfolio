@@ -1,0 +1,32 @@
+/**
+ *
+ * portfolio-typography.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * This file defines the typography of basic elements.
+ *
+ *
+ */
+
+html, body {
+  font-family: $base-font-light;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+h1 {
+  font-family: $base-font-bold;
+  font-size: 24px;
+  font-weight: $base-font-weight;
+  color: $portfolio-h1-color;
+}
+
+h2 {
+  font-family: $base-font-bold;
+  font-size: 22px;
+  font-weight: $base-font-weight;
+  color: $portfolio-h2-color;
+  text-transform: none;
+}

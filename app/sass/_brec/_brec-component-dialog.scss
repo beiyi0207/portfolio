@@ -1,0 +1,175 @@
+/**
+ *
+ * brec-component-brec-dialog.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Examples see below.
+ *
+**/
+
+/* Add this class to body when a dialog is open. This will make sure the body in the background doesn't scroll */
+body.brec-dialog__open {
+  overflow: hidden;
+}
+
+/**
+ *
+ * Multiple dialogs can be placed within one dialog container.
+ *
+ * Example:
+ *
+ * <div class="brec-dialog__container">
+ *   <div class="brec-dialog brec-dialog--full" id="dialog-1" tabindex="0">...</div>
+ *   <div class="brec-dialog brec-dialog--big" id="dialog-2" tabindex="0">...</div>
+ *   <div class="brec-dialog brec-dialog--small" id="dialog-3" tabindex="0">...</div>
+ * </div>
+ *
+**/
+
+.brec-dialog__container {
+  background: rgba(51, 51, 51, 0.7);
+
+  @include flexbox;
+  @include align-items($value: center);
+  @include justify-content($value: center);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+.brec-dialog {
+  background: $default-background-color;
+  opacity: 1;
+  z-index: 20;
+
+  &:focus {
+    outline: solid 2px $focus-outline-color;
+    outline-offset: -2px;
+  }
+}
+
+/* Full Page Dialog */
+
+.brec-dialog--full {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Big Dialog */
+
+.brec-dialog--big {
+  width: 100vw;
+}
+
+/* Regular Dialog */
+
+.brec-dialog--regular {
+  width: 100vw;
+}
+
+/* Small Dialog, ideal for error/warning messages */
+
+.brec-dialog--small {
+  width: 100vw;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-dialog--regular {
+    width: 75vw;
+  }
+
+  .brec-dialog--small {
+    width: 50vw;
+    min-width: 300px;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-dialog--regular {
+    width: 50vw;
+  }
+
+  .brec-dialog--small {
+    width: 30vw;
+    min-width: 300px;
+  }
+}
+
+/**
+ * Example:
+ *
+ * <div class="brec-dialog brec-dialog--small" id="dialog-1" tabindex="0">
+ *   <header class="brec-dialog__header">
+ *     <div class="brec-dialog__title">Dialog Title</div>
+ *     <div class="brec-dialog__close" aria-label="Close brec-dialog" action="close-dialog" tabindex="0"></div>
+ *   </header>
+ *   <div class="brec-dialog__content">
+ *     <p>Message Text</p>
+ *   </div>
+ *   <footer class="brec-dialog__menu brec-dialog__menu--single-button">
+ *     <button class="brec-btn" action="close-dialog">Close</button>
+ *   </footer>
+ * </div>
+ *
+**/
+
+.brec-dialog__header {
+  @include flexbox;
+  @include align-items($value: flex-start);
+  @include justify-content($value: space-between);
+  padding: $gutter-width / 2 $gutter-width / 2 $gutter-width / 4;
+}
+
+.brec-dialog__title {
+  font-family: $heading-font-alternative;
+  font-size: 1.2em;
+  font-weight: $heading-font-weight-alternative;
+  text-transform: uppercase;
+  color: $headings-h2-color;
+}
+
+.brec-dialog__close {
+  color: $default-text-color;
+  cursor: pointer;
+
+  &:focus {
+    background: lighten($button-default-background-color, 10%);
+    padding-left: 5px;
+    padding-bottom: 5px;
+    outline: solid 2px $focus-outline-color;
+    outline-offset: -2px;
+  }
+}
+
+.brec-dialog__close:before {
+  font-family: $icon-font;
+  content: $icon-remove;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  font-size: 1em;
+}
+
+.brec-dialog__content {
+  padding: 0 $gutter-width;
+  color: $default-text-color;
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+
+.brec-dialog__menu {
+  @include flexbox;
+  @include align-items($value: center);
+  @include justify-content($value: space-between);
+  padding: $gutter-width / 2 $gutter-width / 2 $gutter-width / 4;
+  margin-bottom: $gutter-width / 4;
+}
+
+.brec-dialog__menu--single-button {
+  @include justify-content($value: center);
+}

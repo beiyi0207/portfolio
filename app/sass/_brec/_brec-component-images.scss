@@ -1,0 +1,95 @@
+/**
+ *
+ * brec-component-images.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * All images use brec-image as block name.
+ *
+ * Example:
+ * <img class="brec-image brec-image--aside" src="img/logo.png" alt="FPO Hospital" />
+ *
+**/
+
+
+/* Page Header */
+.brec-image--page-header-logo {
+  width: 80%;
+  max-width: 220px;
+}
+
+.brec-image--page-header-secondary-image {
+  width: 80%;
+  max-width: 220px;
+}
+
+/* Aside */
+.brec-image--aside {
+  width: 70%;
+  margin-bottom: $gutter-width / 4;
+}
+
+/* Page Footer */
+.brec-image--page-footer-logo {
+  height: 3rem;
+  margin: 12.5px 0 25px 0;
+}
+
+.brec-image--powered-by-vecna-logo {
+  height: 1.5rem;
+  margin: 25px 0 12.5px 0;
+}
+
+/* Loading Images */
+.brec-image--loading-cat {
+  text-align: center;
+
+  & img {
+    width: 100px;
+    @include prefixer(border-radius, 50%, ("webkit", "moz"));
+  }
+
+  & p {
+    font-family: $base-font-regular;
+    font-weight: $base-font-weight;
+  }
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-image--page-header-logo {
+    margin-right: 5%;
+  }
+
+  /* Aside */
+  .brec-image--aside {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-image--page-header-logo {
+    margin: 0 5%;
+    width: 35%;
+    max-width: 300px;
+  }
+
+  .brec-image--page-header-secondary-image {
+    width: 35%;
+    max-width: 300px;
+  }
+
+  /* Aside */
+  .brec-image--aside {
+    width: 55%;
+  }
+
+  /* Page Footer */
+  .brec-image--page-footer-logo {
+    height: 3rem;
+    margin: 0;
+  }
+
+  .brec-image--powered-by-vecna-logo {
+    margin: 0;
+  }
+}

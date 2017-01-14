@@ -1,0 +1,305 @@
+/**
+ *
+ * brec-component-containers.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * A brec container is used to style a container element.
+ *
+ * Example:
+ * <div class="brec-container brec-container--app">
+ *   <header></header>
+ *   <nav></nav>
+ *   <div class="brec-container brec-container--global">
+ *    <main></main>
+ *    <aside></aside>
+ *  </div>
+ *  <footer></footer>
+ * </div>
+ *
+**/
+
+
+.brec-container {
+  display: block;
+  position: relative;
+  overflow: auto;
+}
+
+/* Use .brec-container-app to wrap the entire patient portal application. */
+.brec-container--app {
+  background: $main-nav-background-color;
+  width: calc(100% + #{$default-main-nav-width});
+  min-height: 100vh;
+  position: relative;
+  left: (-$default-main-nav-width);
+  @include transition (left .25s);
+}
+
+.brec-container--app-drawer-open {
+  left: 0;
+  @include transition (left .25s);
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--app-show-aside {
+    background: $aside-background-color;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--app {
+    background: $default-background-color;
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+}
+
+
+/* Use .brec-container--global to wrap <main> and <aside>. */
+.brec-container--global {
+  background: $default-background-color;
+  width: calc(100% - #{$default-main-nav-width});
+  min-height: calc(100% - #{$default-page-header-height} - #{$large-page-footer-min-height});
+  position: relative;
+  left: #{$default-main-nav-width};
+  overflow: hidden;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--global {
+    @include flexbox;
+    width: calc(100% - #{$default-main-nav-width});
+    overflow: hidden;
+    @include transition (left .5s);
+  }
+
+  .brec-container--global-no-aside {
+    display: block;
+  }
+
+  .brec-container--global-show-aside {
+    position: relative;
+    left: calc(#{$default-main-nav-width} - #{$medium-aside-width});
+    overflow: visible;
+    @include transition (left .5s);
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--global {
+    @include flexbox;
+    @include justify-content($value: space-between);
+    width: 100%;
+    min-height: calc(100% - #{$large-page-header-height} - #{$large-main-nav-height} - #{$large-page-footer-min-height});
+    left: 0;
+  }
+
+  .brec-container--global-no-header-content {
+    min-height: calc(100% - #{$large-main-nav-height} - #{$large-page-footer-min-height});
+  }
+
+  .brec-container--global-no-aside {
+    display: block;
+  }
+}
+
+
+/* Page Header */
+.brec-container--page-header {
+  @include flexbox;
+  @include flex-direction($value: column);
+  @include align-items($value: center);
+
+  width: 100%;
+}
+
+.brec-container--page-header-noflex {
+  display: block;
+}
+
+.brec-container--page-header-image {
+  padding: 1em 0 2em;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--page-header {
+    @include flex-direction($value: row);
+    margin-left: 1em;
+  }
+
+  .brec-container--page-header-image {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--page-header {
+    @include flex-direction($value: row);
+    margin-left: 1em;
+  }
+
+  .brec-container--page-header-image {
+    width: 45%;
+  }
+}
+
+
+/* Page Content */
+.brec-container--page-content {
+  padding: $gutter-width / 4;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--page-content {
+    padding: $gutter-width / 2;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--page-content {
+    padding: $gutter-width / 2;
+  }
+}
+
+
+/* Aside */
+.brec-container--aside-image {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Content Block */
+.brec-container--content-block {
+  background: $content-block-background-color;
+  margin-bottom: $gutter-width / 4;
+  padding: $gutter-width / 2;
+}
+
+.brec-container--content-block__columns {
+  display: block;
+}
+
+.brec-container--content-block__column {
+  width: 100%;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--content-block__columns {
+    @include flexbox;
+  }
+
+  .brec-container--content-block__column {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--content-block__columns {
+    @include flexbox;
+  }
+
+  .brec-container--content-block__column {
+    width: auto;
+  }
+}
+
+
+/* Menu */
+.brec-container--menu {
+  background: $menu-background-color;
+  width: auto;
+  margin: 12.5px 0;
+  padding: 12.5px 25px;
+  @include flexbox;
+  @include align-items($value: center);
+  @include justify-content($value: space-between);
+}
+
+.brec-container--wizard-menu {
+  width: 100%;
+  margin: 0;
+  @include flexbox;
+  @include flex-direction($value: column);
+  @include justify-content($value: flex-start);
+
+  & .brec-btn--responsive {
+    margin-bottom: 0.5em;
+  }
+}
+
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-container--wizard-menu {
+    width: 100%;
+    margin: 12.5px 0;
+    padding: 12.5px 0;
+    @include align-items($value: center);
+    @include flex-direction($value: row);
+    @include justify-content($value: space-between);
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-container--menu {
+    margin: 0;
+  }
+
+  /* Wizard Menu */
+  .brec-container--wizard-menu {
+    width: 100%;
+    margin: 12.5px 0;
+    padding: 12.5px 0;
+    @include align-items($value: center);
+    @include flex-direction($value: row);
+    @include justify-content($value: space-between);
+  }
+}
+
+
+.brec-container--responsive,
+.brec-container--line {
+  margin: 0;
+  @include flexbox;
+  @include flex-direction($value: column);
+}
+
+@media screen and (min-width: $medium-screen-landscape-width) {
+  .brec-container--responsive,
+  .brec-container--line {
+    @include flex-direction($value: row);
+    @include flex-wrap($value: wrap);
+
+    & > * {
+      padding-right: 1em;
+    }
+
+    & > *:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .brec-container--line {
+    @include align-items($value: center);
+  }
+}
+
+
+.brec-container--highlighted-info {
+  background: $success-background-color;
+  border: 1px solid $success-border-color;
+  margin: 1em 0;
+  padding: $gutter-width / 4 $gutter-width / 2;
+}
+
+
+.brec-container--filterbox {
+  padding: $gutter-width / 6;
+}
+
+
+.brec-container--select-all-btn {
+  padding: 1em 0 0.5em 0;
+}

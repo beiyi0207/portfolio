@@ -1,0 +1,139 @@
+/**
+ *
+ * brec-component-dropdown.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Example:
+ *
+ * <section class="brec-dropdown-toolbar">
+ *   <div class="brec-dropdown-menu">
+ *   <button class="brec-flat-btn brec-dropdown-menu__trigger" aria-haspopup="true"
+ *   aria-expanded="false" aria-owns="filter-dropdown" aria-label="show or hide dropdown menu">
+ *     <span class="icon-filter"></span>
+ *   </button>
+ *   <div id="filter-dropdown" class="brec-dropdown-menu__content" aria-hidden="true">.../div>
+ * </section>
+ *
+ *
+**/
+
+.brec-dropdown-toolbar {
+  @include flexbox;
+  position: relative;
+  margin: 0.5em;
+  padding: 0;
+}
+
+.brec-dropdown-menu {
+  @include align-self($value: center);
+  border: 1px solid $default-border-color;
+  border-left: none;
+
+  &:first-of-type {
+    border-left: 1px solid $default-border-color;
+  }
+
+  & [class^="icon-"], [class*=" icon-"], [data-icon]:before {
+    position: relative;
+    top: 0.2ex;
+  }
+}
+
+.brec-dropdown-menu__trigger {
+  margin: 0;
+}
+
+.brec-dropdown-menu__content {
+  display: block;
+  text-align: center;
+  background: $menu-dropdown-background-color;
+  border: 1px solid darken($menu-dropdown-background-color, 10%);
+  box-shadow: 4px 4px 5px darken($menu-dropdown-background-color, 30%);
+  width: calc(100% - #{$gutter-width});
+  position: fixed;
+  left: $gutter-width / 2;
+  z-index: 200;
+}
+
+@media screen and (min-width: $medium-screen-width) {
+  .brec-dropdown-menu__content {
+    width: auto;
+    left: auto;
+  }
+}
+
+
+
+.brec-dropdown-menu__content--full-size {
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-bottom: $gutter-width;
+
+  & h1 {
+    margin-left: 1em;
+  }
+
+  & header {
+    @include flexbox;
+    @include justify-content($value: space-between);
+    @include align-items($value: center);
+  }
+
+  & footer {
+    @include flexbox;
+    @include justify-content($value: space-between);
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: $gutter-width;
+    padding-top: 4px;
+    box-shadow: 0 0 5px $default-border-color;
+  }
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $medium-screen-landscape-width - 1) {
+  .brec-dropdown-menu__content--full-size {
+    width: 60%;
+    height: auto;
+    max-height: 80vh;
+    top: auto;
+    left: auto;
+    padding-bottom: 0;
+    box-shadow: 4px 4px 5px darken($menu-dropdown-background-color, 30%);
+
+    & footer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: $medium-screen-landscape-width) {
+  .brec-dropdown-menu__content--full-size {
+    width: 50%;
+    max-width: 500px;
+    height: auto;
+    max-height: 70vh;
+    top: auto;
+    left: auto;
+    padding-bottom: 0;
+    box-shadow: 4px 4px 5px darken($menu-dropdown-background-color, 30%);
+
+    & footer {
+      display: none;
+    }
+  }
+}
+
+
+
+.brec-dropdown-menu__content--padded {
+  padding: $gutter-width / 4 $gutter-width / 2;
+}
+

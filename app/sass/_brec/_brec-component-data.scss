@@ -1,0 +1,57 @@
+/**
+ *
+ * brec-component-data.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * BREC uses <dl>, <dt>, and <dd> to present data pairs.
+ *
+ * Example:
+ * <div class="brec-container">
+ *   <dl class="brec-data-pair">
+ *     <dt>Patient ID:</dt>
+ *     <dd>abc123def456</dd>
+ *   </dl>
+ *   <dl class="brec-data-pair">
+ *     <dt>Last Login:</dt>
+ *     <dd>July 12th, 2016 at 3:17:41 pm</dd>
+ *   </dl>
+ * </div>
+ *
+**/
+
+dt {
+  white-space: nowrap;
+  margin-right: 0.5em;
+}
+
+dd {
+  margin-left: 0;
+}
+
+.brec-data-pair {
+  @include flexbox;
+  @include flex-wrap($value: wrap);
+}
+
+.brec-data-pair--responsive {
+  margin: 0;
+}
+
+.brec-data__value--break-all {
+  word-break: break-all;
+}
+
+@media screen and (min-width: $medium-screen-landscape-width) {
+  .brec-data-pair {
+    margin: 0.5em 0;
+  }
+
+  .brec-data-pair--responsive {
+    padding-right: 1em;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}

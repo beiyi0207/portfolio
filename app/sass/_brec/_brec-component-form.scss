@@ -1,0 +1,329 @@
+/**
+ *
+ * brec-component-form.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ *
+**/
+
+.brec-form {
+  display: block;
+}
+
+.brec-form--small {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid $default-border-color;
+  margin: $gutter-width / 2;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-form--small {
+    width: 80%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-form--small {
+    width: 33%;
+  }
+}
+
+
+.brec-form__legend {
+  font-family: $base-font-bold;
+  font-weight: $base-font-weight;
+  color: $headings-h3-color;
+  margin-bottom: 1em;
+}
+
+
+.brec-form__description {
+  font-family: $base-font-light;
+  font-weight: $base-font-weight;
+  line-height: 1.5;
+  text-indent: 0;
+  display: block;
+  margin-left: 0.5em;
+}
+
+
+.brec-form__fieldset {
+  background: $content-block-background-color;
+  border: none;
+  margin: 0;
+  padding: $gutter-width / 4 0;
+}
+
+.brec-form__fieldset--padded {
+  padding: $gutter-width / 4;
+}
+
+.brec-form__fieldset--clear {
+  background: none;
+}
+
+
+/**
+ *
+ * brec-form__item is used to group a label and its input
+ *
+ * Example:
+ *
+ * <div class="brec-form__item">
+ *   <label for="id-1" class="brec-form__label">...</label>
+ *   <select class="brec-form__select" id="id-1" name="id-1">
+ *     <option>...</option>
+ *     <option>...</option>
+ *     <option>...</option>
+ *   </select>
+ * </div>
+ *
+**/
+
+.brec-form__item {
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-top: $gutter-width / 2;
+  position: relative;
+  float: none;
+  clear: both;
+
+  &:first-of-type {
+    padding-top: $gutter-width / 8;
+  }
+
+  &:last-of-type {
+    padding-bottom: $gutter-width / 2;
+  }
+}
+
+@media screen and (min-width: $medium-screen-landscape-width)  {
+  .brec-form__item--inline {
+    float: left;
+    clear: none;
+    margin-right: 1.5em;
+
+    &:first-of-type {
+      padding-top: $gutter-width / 2;
+    }
+  }
+}
+
+
+
+.brec-form__label {
+  font-family: $base-font-regular;
+  font-weight: $base-font-weight;
+  line-height: 1.5;
+  display: block;
+  margin-left: 0.5em;
+  float: none;
+  clear: both;
+  @include user-select($arg: none);
+
+  & small {
+    color: $headings-h2-color;
+    font-weight: normal;
+  }
+
+  input[type=checkbox] + &, input[type=radio] + & {
+    font-family: $base-font-light;
+    display: inline;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* Checkbox and Radio */
+
+  input[type=checkbox] + &:before, input[type=radio] + &:before {
+    display: inline-block;
+    margin: 0 0.5ex 0 -0.5ex;
+    font-family: $icon-font;
+  }
+
+  input[type=checkbox] + &:before, input[type=radio] + &:before {
+    color: #aaa;
+  }
+
+  input[type=checkbox] + &:before {
+    content: $icon-check-empty;
+  }
+
+  input[type=radio] + &:before {
+    content: $icon-circle-blank;
+  }
+
+  input.checked + & {
+    z-index: 1;
+  }
+
+  // Keep .checked and :checked separate for IE8
+
+  input:checked + & {
+    z-index: 1;
+  }
+
+  input[type=radio].checked + & {
+    position: relative;
+  }
+
+  input[type=radio]:checked + & {
+    position: relative;
+  }
+
+  input[type=checkbox].checked + &:before {
+    content: $icon-check;
+    color: $link-color;
+  }
+
+  input[type=checkbox]:checked + &:before {
+    content: $icon-check;
+    color: $link-color;
+  }
+
+  input[type=radio].checked + &:before {
+    content: $icon-circle + ' ';
+    color: $link-color;
+  }
+
+  input[type=radio]:checked + &:before {
+    content: $icon-circle + ' ';
+    color: $link-color;
+  }
+
+  input[type=checkbox]:focus + &, input[type=radio]:focus + & {
+    box-shadow: 0 0 3px $link-color;
+    outline: solid 2px $link-color-hover;
+    outline-offset: -2px;
+    z-index: 2;
+  }
+}
+
+.brec-form__label--disabled {
+  cursor: default;
+
+  input[type=checkbox] + &, input[type=radio] + & {
+    cursor: default;
+  }
+}
+
+
+
+select.brec-form__select {
+  color: $default-text-color;
+  border: 1px solid #aaa;
+  border-radius: 25px;
+  font-family: $base-font-light;
+  font-weight: $base-font-weight;
+  font-size: 1em;
+  line-height: 2;
+  overflow: hidden;
+  width: 100%;
+}
+
+select.brec-form__select--multiple {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+select.brec-form__select--disabled {
+  background: none;
+  color: $form-select-disabled-color;
+  border-color: $form-select-disabled-color;
+}
+
+@media screen and (min-width: $medium-screen-width)  {
+  select.brec-form__select {
+    width: auto;
+  }
+}
+
+
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+textarea {
+  color: $default-text-color;
+  font-size: 1em;
+  width: auto;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.5em 1ex;
+  border: 1px solid $default-border-color;
+  @include prefixer(border-radius, 2px, ("webkit", "moz", "o", "ms"));
+}
+
+input:not([type])[readonly],
+input[type="email"][readonly],
+input[type="number"][readonly],
+input[type="password"][readonly],
+input[type="tel"][readonly],
+input[type="text"][readonly],
+input[type="url"][readonly],
+input[type="color"][readonly],
+input[type="date"][readonly],
+input[type="datetime"][readonly],
+input[type="datetime-local"][readonly],
+input[type="month"][readonly],
+input[type="time"][readonly],
+input[type="week"][readonly],
+textarea[readonly] {
+  background: none;
+}
+
+
+@media screen and (min-width: $medium-screen-landscape-width)  {
+  input.brec-form__input--zip-code {
+    width: 5em;
+  }
+
+  input.brec-form__input--name,
+  input.brec-form__input--city {
+    width: auto;
+    min-width: 10em;
+  }
+}
+
+
+/* Expandable Content Triggered by Radio/Checkbox */
+.brec-form__expandable-content {
+  padding: 0.5em 0;
+  padding-left: calc(1em + 2px);
+}
+
+/* File Upload */
+input[type=file] {
+  position: absolute;
+  left: -999px;
+}
+
+.brec-form__label--upload {
+  padding: $gutter-width / 2 0;
+  margin: $gutter-width / 2 0;
+  text-align: center;
+  width: 100%;
+  border: 1px dashed $default-border-color;
+  cursor: pointer;
+
+  & small {
+    display: block;
+    margin-top: 1ex;
+  }
+}

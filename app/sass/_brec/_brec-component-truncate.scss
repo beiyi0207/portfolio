@@ -1,0 +1,32 @@
+/**
+ *
+ * brec-component-truncate.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ * Example:
+ * <div class="brec-truncate">
+ *   <span class="brec-truncate__text">Text to be truncated.</span>
+ * </div>
+ *
+**/
+
+/* Put class brec-truncate in the parent of the element you want to truncate. */
+
+.brec-truncate {
+  overflow: hidden;
+}
+
+/* Truncate text with ellipsis. */
+.brec-truncate__text {
+  @include ellipsis;
+  max-width: 90%;
+}
+
+/* Multi-line ellipsis */
+.brec-truncate-multilines {
+  overflow: hidden;
+  max-height: 4.5em;
+}
+

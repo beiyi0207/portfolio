@@ -1,0 +1,57 @@
+/**
+ *
+ * brec-base-typography.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * This file defines the typography of basic elements.
+ *
+ *
+ */
+
+html, body {
+  font-family: $base-font-light;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: $default-text-color;
+}
+
+h1 {
+  font-family: $base-font-bold;
+  font-size: 1.4em;
+  color: $headings-h1-color;
+  font-weight: $base-font-weight;
+}
+
+h2 {
+  font-family: $heading-font-alternative;
+  font-size: 1.2em;
+  font-weight: $heading-font-weight-alternative;
+  text-transform: uppercase;
+  color: $headings-h2-color;
+}
+
+h3 {
+  font-family: $base-font-bold;
+  color: $headings-h3-color;
+  line-height: 2;
+  font-weight: $base-font-weight;
+}
+
+strong, b, dt, th {
+  font-family: $base-font-bold;
+  font-weight: $base-font-weight;
+}
+
+p, dd, td, a, li, figcaption, img, input {
+  font-family: $base-font-light;
+}
+
+nav {
+  font-family: $base-font-regular;
+}
+
+th, td {
+  text-align: left;
+}

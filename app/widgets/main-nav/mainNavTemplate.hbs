@@ -1,0 +1,23 @@
+{{#if view.mainNavOpen}}
+<ul class="portfolio-main-nav__list">
+  {{#each view.navItems}}
+  <li class="portfolio-main-nav__item">
+    <a href="{{link}}" class="portfolio-main-nav__link" aria-label="{{name}}">
+      <span class="{{icon}}"></span>
+    </a>
+  </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+<button
+  class="portfolio-main-nav__toggle"
+  data-js-action="toggleMainNav"
+  id="main-nav-toggle"
+  type="button"
+  aria-haspopup="true"
+  aria-expanded="{{#if view.mainNavOpen}}true{{else}}false{{/if}}"
+  aria-controls="main-nav"
+  aria-label="{{#if view.mainNavOpen}}Hide{{else}}Show{{/if}} Main Menu">
+  <span class="icon-menu"></span>
+</button>

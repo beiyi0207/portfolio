@@ -1,0 +1,47 @@
+/**
+ *
+ * brec-component-headings.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Heading modifiers
+ *
+ * The default typography setting of the headings can be found in _brec-base-typography.scss
+ * If you need to modify the style of a certain heading, add the modifier here.
+ *
+**/
+
+/* Page Title */
+.brec-heading--page-title__icon {
+  color: $link-color;
+}
+
+
+/* Content Block */
+.brec-heading--content-block {
+  font-size: 1.1em;
+  margin-top: 0;
+  width: 85%;
+}
+
+@media screen and (min-width: $medium-screen-width) and (max-width: $large-screen-width - 1)  {
+  .brec-heading--content-block {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: $large-screen-width) {
+  .brec-heading--content-block {
+    font-size: 1.2em;
+  }
+}
+
+
+/* Heading with Meta */
+.brec-heading--has-meta {
+  margin-bottom: 0;
+}
+
+.brec-heading__meta {
+  margin-top: 0;
+}

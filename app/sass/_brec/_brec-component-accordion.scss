@@ -1,0 +1,138 @@
+/**
+ *
+ * brec-component-accordion.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ *
+**/
+
+
+
+/**
+ *
+ * Example:
+ *
+ * <section class="brec-container">
+ *   <div class="brec-accordion brec-accordion--close" aria-haspopup="true"
+ *   aria-expanded="false" aria-owns="directions" aria-label="show or hide details">Directions</div>
+ *   <div id="directions" class="brec-accordion__content" aria-hidden="true">...</div>
+ * </section>
+ *
+ *
+ * Use JavaScript to toggle between "brec-accordion--close" and "brec-accordion--open"
+ *
+ * Use JavaScript to change aria-expanded and aria-hidden accordingly
+ *
+**/
+
+.brec-accordion {
+  font-family: $heading-font-alternative;
+  font-weight: $heading-font-weight-alternative;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-indent: -1em;
+  cursor: pointer;
+  background: $accordion-background-color;
+  margin-top: $gutter-width / 4;
+  padding: 1em;
+  padding-left: 2em;
+
+  &:hover {
+    background: lighten($accordion-background-color, 2.5%);
+  }
+}
+
+
+/**
+ *
+ * Add modifier --list-item when you want to use accordion in a list.
+ *
+ * Example:
+ *
+ * <ul class="brec-list">
+ *   <li class="brec-list__item brec-list__item--border">
+ *     <a class="brec-accordion brec-accordion--list-item brec-accordion--close" aria-haspopup="true"
+ *     aria-expanded="false" aria-owns="filter-clinics" aria-label="show or hide details">
+ *       <span class="icon-hospital"></span> Clinics
+ *     </a>
+ *     <div id="filter-clinics" class="brec-accordion__content" aria-hidden="true">...</div>
+ *   </li>
+ *   ...
+ * </ul>
+ *
+ *
+ * Use JavaScript to toggle between "brec-accordion--close" and "brec-accordion--open"
+ *
+ * Use JavaScript to change aria-expanded and aria-hidden accordingly
+ *
+**/
+
+.brec-accordion--list-item {
+  font-family: $base-font-light;
+  font-weight: $base-font-weight;
+  text-transform: none;
+  background: none;
+  display: block;
+  margin: -0.5em 0;
+  padding: 0.75em $gutter-width / 2;
+
+  &:hover {
+    color: $button-primary-color;
+    background: $button-primary-background-color;
+  }
+}
+
+@media screen and (min-width: $medium-screen-width) {
+  .brec-accordion--list-item {
+    margin-left: -$gutter-width / 2;
+    margin-right: -$gutter-width / 2;
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+  }
+}
+
+
+
+.brec-accordion--close:before {
+  content: $icon-chevron-right;
+  font-family: $icon-font;
+  font-size: 90%;
+  font-weight: lighter;
+  position: relative;
+  top: 0.1ex;
+  margin-right: 6px;
+}
+
+.brec-accordion--open:before {
+  content: $icon-chevron-down;
+  font-family: $icon-font;
+  font-size: 90%;
+  font-style: normal;
+  position: relative;
+  top: 0.1ex;
+  margin-right: 3px;
+}
+
+
+
+.brec-accordion__content {
+  padding: $gutter-width / 4;
+  display: none;
+}
+
+.brec-accordion__content--no-padding {
+  padding: 0;
+}
+
+@media screen and (min-width: $medium-screen-width) {
+  .brec-accordion__content {
+    padding: $gutter-width / 2;
+  }
+}
+
+
+.brec-accordion__header-text--float-right {
+  float: right;
+}

@@ -1,0 +1,507 @@
+/*
+ * _brec-base-icons.scss
+ *
+*/
+@mixin icons($path: '') {
+  @font-face {
+    font-family: 'icomoon';
+    src:url($path + '/icomoon.eot');
+    src:url($path + '/icomoon.eot#iefix') format('embedded-opentype'),
+      url($path + '/icomoon.woff') format('woff'),
+      url($path + '/icomoon.ttf') format('truetype'),
+      url($path + '/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+[class^="icon-"], [class*=" icon-"], [data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a[class*='icon'] {
+  text-decoration: none;
+}
+
+/*
+ * Use the following CSS code if you want to have a class per icon.
+ *
+ * Instead of a list of all class selectors,
+ * you can use the generic selector below, but it's slower:
+ * [class*="icon-"] {
+ *
+ *
+**/
+
+.icon-cloud-upload, .icon-folder-upload, .icon-bin, .icon-file-o, .icon-file-text, .icon-file-text-o, .icon-fork, .icon-flag, .icon-flag-o, .icon-expand, .icon-switch, .icon-pill, .icon-home, .icon-inbox, .icon-calendar, .icon-credit, .icon-question-sign, .icon-stethoscope, .icon-star-empty, .icon-star, .icon-drawer, .icon-plus, .icon-minus, .icon-reorder, .nav-toggle, .icon-ok, .icon-exclamation-sign, .icon-remove, .alert .close, .icon-sort-up, .icon-sort-down, .icon-sort, .icon-move, .icon-signout, .icon-warning-sign, .icon-remove-sign, .icon-info-sign, .icon-check, .icon-ok-sign, .icon-ok-circle, .icon-check-empty, .icon-filter, .icon-arrow-right, .icon-chevron-right, .icon-chevron-left, .icon-arrow-left, .icon-search, .icon-paper-clip, .icon-tea, .icon-bandage, .icon-email, .icon-reply, .icon-forward, .icon-allergies, .icon-address-book, .icon-cog, .icon-syringe, .icon-bar-chart, .icon-hospital, .icon-th, .icon-external-link, .icon-layers, .icon-desktop, .icon-tablet, .icon-fontwidth, .icon-th-list, .icon-user, .icon-user-md, .icon-group, .icon-download, .icon-medkit, .icon-caret-down, .icon-caret-up, .icon-caret-left, .icon-caret-right, .icon-heart, .icon-h-sign, .icon-plus-sign, .icon-pencil, .icon-edit, .icon-eye-open, .icon-print, .icon-envelope, .icon-comment, .icon-chat, .icon-dollar-sign, .icon-clip-board, .icon-file-black, .icon-file, .icon-circle-blank, .icon-circle, .icon-barcode, .icon-ellipsis, .icon-double-angle-right, .icon-angle-right, .icon-angle-left, .icon-double-angle-left, .icon-blocked, .icon-angle-up, .icon-angle-down, .icon-chevron-down, .icon-arrow-down, .icon-double-angle-down, .icon-arrow-up, .icon-double-angle-up, .icon-chevron-up, .icon-lock, .icon-shopping-cart {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-cloud-upload:before {
+  content: "\e903"; }
+
+.icon-folder-upload:before {
+  content: "\e901"; }
+
+.icon-bin:before {
+  content: "\e900"; }
+
+.icon-file-o:before {
+  content: "\f016"; }
+
+.icon-flag:before {
+  content: "\f024"; }
+
+.icon-expand:before {
+  content: "\f065"; }
+
+.icon-copy:before {
+  content: "\f0c5"; }
+
+.icon-fork:before {
+  content: "\f0e8"; }
+
+.icon-file-text-o:before {
+  content: "\f0f6"; }
+
+.icon-flag-o:before {
+  content: "\f11d"; }
+
+.icon-file-black:before {
+  content: "\f15b"; }
+
+.icon-file-text:before {
+  content: "\f15c"; }
+
+.icon-lock:before {
+  content: "\e600"; }
+
+.icon-shopping-cart:before {
+  content: "\e606"; }
+
+.icon-phone:before {
+  content: "\e603"; }
+
+.icon-mobile:before {
+  content: "\e604"; }
+
+.icon-unlock-alt:before {
+  content: "\e601"; }
+
+.icon-spacebar:before {
+  content: "\e605"; }
+
+.icon-pill:before {
+  content: "\e007"; }
+
+.icon-home:before {
+  content: "\f015"; }
+
+.icon-inbox:before {
+  content: "\f01c"; }
+
+.icon-calendar:before {
+  content: "\f073"; }
+
+.icon-credit:before {
+  content: "\f09d"; }
+
+.icon-question-sign:before {
+  content: "\f059"; }
+
+.icon-stethoscope:before {
+  content: "\f0f1"; }
+
+.icon-star-empty:before {
+  content: "\f006"; }
+
+.icon-star:before {
+  content: "\f005"; }
+
+.icon-drawer:before {
+  content: "\e009"; }
+
+.icon-plus:before {
+  content: "\f067"; }
+
+.icon-minus:before {
+  content: "\f068"; }
+
+.icon-reorder:before, .icon-nav-toggle:before {
+  content: "\f0c9"; }
+
+.icon-ok:before {
+  content: "\f00c"; }
+
+.icon-exclamation-sign:before {
+  content: "\f06a"; }
+
+.icon-remove:before, .alert .close:before {
+  content: "\f00d"; }
+
+.icon-sort-up:before {
+  content: "\f0de"; }
+
+.icon-sort-down:before {
+  content: "\f0dd"; }
+
+.icon-sort:before {
+  content: "\f0dc"; }
+
+.icon-move:before {
+  content: "\f047"; }
+
+.icon-signout:before {
+  content: "\f08b"; }
+
+.icon-warning-sign:before {
+  content: "\f071"; }
+
+.icon-remove-sign:before {
+  content: "\f057"; }
+
+.icon-info-sign:before {
+  content: "\f05a"; }
+
+.icon-check:before {
+  content: "\f046"; }
+
+.icon-ok-sign:before {
+  content: "\f058"; }
+
+.icon-ok-circle:before {
+  content: "\f05d"; }
+
+.icon-check-empty:before {
+  content: "\f096"; }
+
+.icon-filter:before {
+  content: "\f0b0"; }
+
+.icon-arrow-right:before {
+  content: "\f061"; }
+
+.icon-chevron-right:before {
+  content: "\f054"; }
+
+.icon-chevron-left:before {
+  content: "\f053"; }
+
+.icon-arrow-left:before {
+  content: "\f060"; }
+
+.icon-search:before {
+  content: "\e001"; }
+
+.icon-paper-clip:before {
+  content: "\f0c6"; }
+
+.icon-tea:before {
+  content: "\f3cb"; }
+
+.icon-bandage:before {
+  content: "\e004"; }
+
+.icon-email:before {
+  content: "\e005"; }
+
+.icon-reply:before {
+  content: "\e006"; }
+
+.icon-forward:before {
+  content: "\e00a"; }
+
+.icon-allergies:before {
+  content: "\e00b"; }
+
+.icon-address-book:before {
+  content: "\e00c"; }
+
+.icon-cog:before {
+  content: "\f013"; }
+
+.icon-syringe:before {
+  content: "\e002"; }
+
+.icon-bar-chart:before {
+  content: "\e003"; }
+
+.icon-hospital:before {
+  content: "\f0f8"; }
+
+.icon-th:before {
+  content: "\f00a"; }
+
+.icon-external-link:before {
+  content: "\f08e"; }
+
+.icon-layers:before {
+  content: "\f1ca"; }
+
+.icon-desktop:before {
+  content: "\f108"; }
+
+.icon-tablet:before {
+  content: "\e00e"; }
+
+.icon-fontwidth:before {
+  content: "\f1f9"; }
+
+.icon-th-list:before {
+  content: "\f00b"; }
+
+.icon-user:before {
+  content: "\f007"; }
+
+.icon-user-md:before {
+  content: "\f0f0"; }
+
+.icon-group:before {
+  content: "\f0c0"; }
+
+.icon-download:before {
+  content: "\f11a"; }
+
+.icon-medkit:before {
+  content: "\f0fa"; }
+
+.icon-caret-down:before {
+  content: "\f0d7"; }
+
+.icon-caret-up:before {
+  content: "\f0d8"; }
+
+.icon-caret-left:before {
+  content: "\f0d9"; }
+
+.icon-caret-right:before {
+  content: "\f0da"; }
+
+.icon-heart:before {
+  content: "\e008"; }
+
+.icon-h-sign:before {
+  content: "\f0fd"; }
+
+.icon-plus-sign:before {
+  content: "\f0fe"; }
+
+.icon-pencil:before {
+  content: "\f040"; }
+
+.icon-edit:before {
+  content: "\f044"; }
+
+.icon-eye-open:before {
+  content: "\f06e"; }
+
+.icon-print:before {
+  content: "\f02f"; }
+
+.icon-envelope:before {
+  content: "\e00d"; }
+
+.icon-comment:before {
+  content: "\e00f"; }
+
+.icon-chat:before {
+  content: "\e010"; }
+
+.icon-dollar-sign:before {
+  content: "\e000"; }
+
+.icon-clip-board:before {
+  content: "\e011"; }
+
+.icon-file:before {
+  content: "\e012"; }
+
+.icon-circle-blank:before {
+  content: "\f10c"; }
+
+.icon-circle:before {
+  content: "\f111"; }
+
+.icon-barcode:before {
+  content: "\f02a"; }
+
+.icon-ellipsis:before {
+  content: "\e013"; }
+
+.icon-double-angle-right:before {
+  content: "\f101"; }
+
+.icon-angle-right:before {
+  content: "\f105"; }
+
+.icon-angle-left:before {
+  content: "\f104"; }
+
+.icon-double-angle-left:before {
+  content: "\f100"; }
+
+.icon-blocked:before {
+  content: "\e016"; }
+
+.icon-angle-up:before {
+  content: "\f106"; }
+
+.icon-angle-down:before {
+  content: "\f107"; }
+
+.icon-chevron-down:before {
+  content: "\f078"; }
+
+.icon-arrow-down:before {
+  content: "\f063"; }
+
+.icon-double-angle-down:before {
+  content: "\f103"; }
+
+.icon-arrow-up:before {
+  content: "\f062"; }
+
+.icon-double-angle-up:before {
+  content: "\f102"; }
+
+.icon-chevron-up:before {
+  content: "\f077"; }
+
+.icon-switch:before {
+  content: "\e602"; }
+
+
+$icon-font: icomoon;
+
+$icon-cloud-upload: "\e903";
+$icon-folder-upload: "\e901";
+$icon-bin: "\e900";
+$icon-pill: "\e007";
+$icon-home: "\f015";
+$icon-inbox: "\f01c";
+$icon-calendar: "\f073";
+$icon-credit: "\f09d";
+$icon-question-sign: "\f059";
+$icon-stethoscope: "\f0f1";
+$icon-star-empty: "\f006";
+$icon-star: "\f005";
+$icon-drawer: "\e009";
+$icon-plus: "\f067";
+$icon-minus: "\f068";
+$icon-reorder: "\f0c9";
+$icon-nav-toggle: "\f0c9";
+$icon-ok: "\f00c";
+$icon-exclamation-sign: "\f06a";
+$icon-remove: "\f00d";
+$icon-sort-up: "\f0de";
+$icon-sort-down: "\f0dd";
+$icon-sort: "\f0dc";
+$icon-move: "\f047";
+$icon-signout: "\f08b";
+$icon-warning-sign: "\f071";
+$icon-remove-sign: "\f057";
+$icon-info-sign: "\f05a";
+$icon-check: "\f046";
+$icon-ok-sign: "\f058";
+$icon-ok-circle: "\f05d";
+$icon-check-empty: "\f096";
+$icon-filter: "\f0b0";
+$icon-arrow-right: "\f061";
+$icon-chevron-right: "\f054";
+$icon-chevron-left: "\f053";
+$icon-arrow-left: "\f060";
+$icon-search: "\e001";
+$icon-paper-clip: "\f0c6";
+$icon-tea: "\f3cb";
+$icon-bandage: "\e004";
+$icon-email: "\e005";
+$icon-reply: "\e006";
+$icon-forward: "\e00a";
+$icon-allergies: "\e00b";
+$icon-address-book: "\e00c";
+$icon-cog: "\f013";
+$icon-syringe: "\e002";
+$icon-bar-chart: "\e003";
+$icon-hospital: "\f0f8";
+$icon-th: "\f00a";
+$icon-external-link: "\f08e";
+$icon-layers: "\f1ca";
+$icon-desktop: "\f108";
+$icon-tablet: "\e00e";
+$icon-fontwidth: "\f1f9";
+$icon-th-list: "\f00b";
+$icon-user: "\f007";
+$icon-user-md: "\f0f0";
+$icon-group: "\f0c0";
+$icon-download: "\f11a";
+$icon-medkit: "\f0fa";
+$icon-caret-down: "\f0d7";
+$icon-caret-up: "\f0d8";
+$icon-caret-left: "\f0d9";
+$icon-caret-right: "\f0da";
+$icon-heart: "\e008";
+$icon-h-sign: "\f0fd";
+$icon-plus-sign: "\f0fe";
+$icon-pencil: "\f040";
+$icon-edit: "\f044";
+$icon-eye-open: "\f06e";
+$icon-print: "\f02f";
+$icon-envelope: "\e00d";
+$icon-comment: "\e00f";
+$icon-chat: "\e010";
+$icon-dollar-sign: "\e000";
+$icon-clip-board: "\e011";
+$icon-file: "\e012";
+$icon-circle-blank: "\f10c";
+$icon-circle: "\f111";
+$icon-barcode: "\f02a";
+$icon-ellipsis: "\e013";
+$icon-double-angle-right: "\f101";
+$icon-angle-right: "\f105";
+$icon-angle-left: "\f104";
+$icon-double-angle-left: "\f100";
+$icon-blocked: "\e016";
+$icon-angle-up: "\f106";
+$icon-angle-down: "\f107";
+$icon-chevron-down: "\f078";
+$icon-arrow-down: "\f063";
+$icon-double-angle-down: "\f103";
+$icon-arrow-up: "\f062";
+$icon-double-angle-up: "\f102";
+$icon-chevron-up: "\f077";
+$icon-location: "\e600";
+$icon-clock: "\e601";
+$icon-users: "\e602";
+$icon-user-2: "\e603";
+$icon-globe: "\e604";
+$icon-newspaper: "\e605";
+$icon-radio-unchecked: "\e606";
+$icon-code: "\e607";
+$icon-earth: "\e608";
+$icon-flow-branch: "\e609";
+$icon-heart-2: "\e60a";
+$icon-lock: "\e600";
+$icon-switch: "\e602";
+$icon-fork: "\f0e8";
+$icon-flag: "\f024";
+$icon-flag-o: "\f11d";
+$icon-file-o: "\f016";
+$icon-file-black: "\f15b";
+$icon-expand: "\f065";

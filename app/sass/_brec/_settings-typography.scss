@@ -1,0 +1,33 @@
+/////// Typography Settings ///////////////////
+
+@font-face {
+  font-family: proxima-nova;
+  src: url(assets/fonts/ProximaNova-Reg-webfont.woff);
+}
+@font-face {
+  font-family: proxima-nova-bold;
+  src: url(assets/fonts/ProximaNova-Bold-webfont.woff);
+}
+@font-face {
+  font-family: proxima-nova-light;
+  src: url(assets/fonts/ProximaNova-Light-webfont.woff);
+}
+@font-face {
+  font-family: icomoon;
+  src: url(assets/fonts/icomoon.woff);
+}
+@font-face {
+  font-family: icon-bin;
+  src: url(assets/fonts/icon-bin.woff);
+}
+
+$base-font-regular: 'proxima-nova' !default;
+$base-font-light: 'proxima-nova-light' !default;
+$base-font-bold: 'proxima-nova-bold' !default;
+
+$base-font-size: 16px !default;
+$base-line-height: 1.5 !default;
+$base-font-weight: 300 !default;
+
+$heading-font-alternative: HelveticaNeue, Helvetica, arial, verdana, sans-serif !default;
+$heading-font-weight-alternative: 700 !default;

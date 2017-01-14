@@ -1,0 +1,70 @@
+/**
+ *
+ * brec-component-lists.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ *
+**/
+
+.brec-list {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.brec-list--filterbox {
+  max-height: 50%;
+  overflow: auto;
+  border: 1px solid $default-border-color;
+}
+
+
+.brec-list__item {
+  text-align: left;
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.brec-list__item--filterbox {
+  padding: 0;
+
+  & .brec-btn-label {
+    display: block;
+    width: 100%;
+  }
+
+  & input[type=checkbox] + .brec-btn-label {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: $medium-screen-width) {
+  .brec-list__item {
+    padding: 0.5em $gutter-width / 2;
+  }
+
+  .brec-list__item--filterbox {
+    padding: 0;
+  }
+}
+
+
+
+.brec-list__item--border {
+  border-top: 1px solid $default-border-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid $default-border-color;
+  }
+}
+
+
+
+.brec-list__item--has-btn {
+  @include flexbox;
+  @include justify-content($value: space-between);
+  @include align-items($value: center);
+}

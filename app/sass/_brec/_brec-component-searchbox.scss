@@ -1,0 +1,81 @@
+/**
+ *
+ * brec-component-searchbox.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Example: Basic searchbox
+ *
+ * <form class="brec-searchbox">
+ *   <input class="brec-searchbox__input" id="filter-clinics-search" type="search" placeholder="Search">
+ *   <button class="brec-flat-btn brec-searchbox__search-btn" type="submit" aria-label="search">
+ *     <span class="icon-search"></span>
+ *   </button>
+ * </form>
+ *
+ * Example: Searchbox with Split Button
+ *
+ * <form class="brec-searchbox">
+ *   <button class="brec-split-btn brec-split-btn--searchbox" type="button"
+ *   aria-haspopup="true" aria-expanded="false" aria-owns="searchbox-dropdown-clinics"
+ *   aria-label="show or hide dropdown menu">Show</button>
+ *   <ul id="searchbox-dropdown-clinics" class="brec-split-btn__menu" aria-hidden="true">
+ *      <li class="brec-split-btn__menu-item">All</li>
+ *      <li class="brec-split-btn__menu-item">Selected</li>
+ *      <li class="brec-split-btn__menu-item">Available</li>
+ *   </ul>
+ *   <input class="brec-searchbox__input brec-searchbox__input--split-btn" id="filter-clinics-search"
+ *   type="search" placeholder="Search">
+ *   <button class="brec-flat-btn brec-searchbox__search-btn" type="submit" aria-label="search">
+ *     <span class="icon-search"></span>
+ *   </button>
+ * </form>
+ *
+**/
+
+.brec-searchbox {
+  @include flexbox;
+  position: relative;
+  margin: $gutter-width / 4;
+  padding-bottom: 0;
+}
+
+.brec-searchbox__input {
+  @include appearance ($value: textfield);
+  font-family: $base-font-light;
+  font-size: 1em;
+  text-indent: 0.5em;
+  background: #fff;
+  border: 1px solid $default-border-color;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 80%;
+  max-width: 27em;
+  padding: 0.5em 0;
+}
+
+.brec-searchbox__input--tfoot {
+  border-radius: 5px;
+  width: 90%;
+  text-indent: 2px;
+}
+
+.brec-searchbox__input--split-btn {
+  width: 65%;
+  border-radius: 0px;
+  margin-left: -2px;
+}
+
+.brec-searchbox__search-btn {
+  background: #fff;
+  border: 1px solid $default-border-color;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin-left: -2px;
+  padding: 0.5em;
+}

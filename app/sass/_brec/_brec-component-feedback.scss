@@ -1,0 +1,91 @@
+/**
+ *
+ * brec-component-feedback.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * Example:
+ * <dl class="brec-data-pair brec-feedback brec-feedback--error">
+ *   <dt>Preferred Language:</dt>
+ *   <dd>(Missing)</dd>
+ * </dl>
+ *
+ *
+**/
+
+.brec-feedback--success {
+  color: $success-color;
+
+  &:before {
+    content: '\f058';
+    font-family: icomoon;
+    margin-right: 5px;
+    position: relative;
+    top: 0.1ex;
+  }
+}
+
+.brec-feedback--error {
+  color: $error-color;
+
+  &:before {
+    content: '\f071';
+    font-family: icomoon;
+    margin-right: 5px;
+    position: relative;
+    top: 0.1ex;
+  }
+}
+
+.brec-feedback--warning {
+  color: $warning-color;
+
+  &:before {
+    content: '\f06a';
+    font-family: icomoon;
+    margin-right: 5px;
+    position: relative;
+    top: 0.1ex;
+  }
+}
+
+.brec-feedback--info {
+  color: $info-color;
+
+  &:before {
+    content: '\f05a';
+    font-family: icomoon;
+    margin-right: 5px;
+    position: relative;
+    top: 0.1ex;
+  }
+}
+
+.brec-success-color {
+  color: $success-color;
+}
+
+/* Feedback Box */
+.brec-feedback-box {
+  padding-left: 1em;
+}
+
+.brec-feedback-box--success {
+  background: $success-background-color;
+  border: 1px solid $success-border-color;
+}
+
+.brec-feedback-box--error {
+  background: $error-background-color;
+  border: 1px solid $error-border-color;
+}
+
+.brec-feedback-box--warning {
+  background: $warning-background-color;
+  border: 1px solid $warning-border-color;
+}
+
+.brec-feedback-box--info {
+  background: $info-background-color;
+  border: 1px solid $info-border-color;
+}

@@ -1,0 +1,78 @@
+/**
+ *
+ * brec-component-pagination.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ *
+ * Example:
+ * <section class="brec-pagination">
+ *   <a class="brec-pagination__link" aria-label="First page"><span class="icon-double-angle-left"></span></a>
+ *   <a class="brec-pagination__link" aria-label="Previous page"><span class="icon-angle-left"></span></a>
+ *   <a class="brec-pagination__link">1</a>
+ *   <a class="brec-pagination__link">2</a>
+ *   <a class="brec-pagination__link">3</a>
+ *   <a class="brec-pagination__link" aria-label="Next page"><span class="icon-angle-right"></span></a>
+ *   <a class="brec-pagination__link" aria-label="Last page"><span class="icon-double-angle-right"></span></a>
+ * </section>
+ *
+**/
+
+.brec-pagination {
+  @include flexbox;
+  @include justify-content($value: center);
+  @include align-items($value: center);
+  margin-top: $gutter-width / 2;
+  padding: $gutter-width / 2;
+}
+
+.brec-pagination__link {
+  display: inline-block;
+  padding: 1ex 1em;
+  border: 1px solid $pagination-link-border-color;
+  border-radius: 1px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 0.5em;
+
+  &, &:link, &:visited {
+    color: $link-color;
+  }
+
+  &:hover {
+    border: 1px solid $link-color-hover;
+    background: $link-color-hover;
+    color: $pagination-link-text-color-hover;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: solid 2px $focus-outline-color;
+    outline-offset: -2px;
+  }
+}
+
+.brec-pagination__link--current {
+  &, &:link, &:visited {
+    color: $pagination-link-text-color-hover;
+    background: $link-color;
+  }
+
+  &:hover {
+    border: 1px solid $link-color;
+    background: $link-color;
+    color: #fff;
+    cursor: default;
+  }
+}
+
+.brec-pagination__link--disabled {
+  border: 1px solid $button-disabled-border-color;
+
+  &, &:link, &:visited, &:hover, &:active {
+    background: none;
+    color: $button-disabled-color;
+    border: 1px solid $button-disabled-border-color;
+    cursor: default;
+  }
+}

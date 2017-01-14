@@ -1,0 +1,80 @@
+/**
+ *
+ * brec-component-links.scss
+ *
+ * Author: Beiyi Wu, beiyi.wu@vecna.com
+ *
+ * All links use brec-link as block name.
+ *
+ * Example:
+ * <a class="brec-link">This is a regular link.</a>
+ *
+ * <a class="brec-link brec-link--external" href="">This is an external link and has an icon to indicate it.</a>
+ *
+ * <a class="brec-link brec-link--image" href="">
+ *   <img class="brec-image" alt="logo" />
+ * </a>
+**/
+
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: solid 2px $focus-outline-color;
+  outline-offset: -2px;
+}
+
+.brec-link,
+.brec-link:link,
+.brec-link:visited {
+  color: $link-color;
+  border-bottom: 1px solid $link-color;
+}
+
+.brec-link:hover {
+  color: $link-color-hover;
+  border-bottom-color: $link-color-hover;
+}
+
+.brec-link--external:after {
+  content: "\f08e";
+  font-family: 'icomoon';
+  font-size: 0.75em;
+  position: relative;
+  top: 1.5px;
+  left: 2.5px;
+}
+
+.brec-link--image,
+.brec-link--image:link,
+.brec-link--image:visited {
+  display: inline-block;
+  border-bottom: none;
+}
+
+.brec-link--page-footer,
+.brec-link--page-footer:link,
+.brec-link--page-footer:visited {
+  color: $page-footer-link-color;
+  border: none;
+}
+
+.brec-link--page-footer:hover {
+  color: lighten($page-footer-link-color, 10%);
+}
+
+.brec-link--list-item,
+.brec-link--list-item:link,
+.brec-link--list-item:visited {
+  border-bottom: none;
+}
+
+
+// Breadcrumb
+.brec-link--breadcrumb,
+.brec-link--breadcrumb:link,
+.brec-link--breadcrumb:visited {
+  border-bottom: none;
+}
