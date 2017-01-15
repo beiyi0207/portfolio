@@ -15,30 +15,44 @@
 
 html, body {
   font-size: 16px;
-  height: 100%;
   position: relative;
   margin: 0;
 }
 
 .app {
   color: $portfolio-default-color;
-  background: $portfolio-default-background;
   position: relative;
-  height: 100%;
+}
+
+.app--splash {
+  color: $portfolio-splash-screen-color;
+  background: $portfolio-splash-screen-background;
+  overflow: auto;
+  height: 100vh;
 }
 
 .portfolio-page-header {
   color: $portfolio-page-header-color;
   background: $portfolio-page-header-background;
-  height: 120px;
+  position: relative;
+}
+
+.portfolio-page-header--splash {
+  background: none;
+  margin: 15% 0 50px 0;
+  text-align: center;
+}
+
+.portfolio-page-header__author {
+  @include flexbox;
+  @include align-items($value: center);
+  border-bottom: 10px solid $portfolio-default-background;
+  padding: 10px;
 }
 
 .portfolio-page-header__author-photo {
-  width: 120px;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-
+  width: 40px;
+  line-height: 0;
 
   & img {
     width: 100%;
@@ -46,57 +60,65 @@ html, body {
   }
 }
 
+.portfolio-page-header__author-photo--splash {
+  width: 60%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
 .portfolio-page-header__author-name {
-  position: absolute;
-  top: 70px;
-  left: 170px;
+  margin-left: 1em;
 
   & h1 {
-    font-size: 1.8em;
+    font-size: 1.25em;
     margin: 0;
   }
 }
 
+.portfolio-page-header__author-name--splash {
+  margin: 25px 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 .portfolio-page-header__icon {
   position: absolute;
-  top: 125px;
+  top: 47px;
   right: 25px;
   z-index: 30;
 
   &:before {
-    content: '⬣';
-    font-size: 5rem;
-    color: $portfolio-icon-background;
-    line-height: 1;
+    content: url('assets/img/hexagon.png');
   }
 
   & span {
     color: $portfolio-icon-color;
-    font-size: 2em;
+    font-size: 1.25em;
     position: absolute;
-    top: 1.45ex;
-    left: 22px;
+    top: 12px;
+    left: 15px;
   }
 }
 
 .portfolio-page-footer {
   background: $portfolio-page-footer-background;
   color: $portfolio-page-footer-color;
+  font-size: 0.8em;
   width: 100%;
-  height: 60px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
+}
+
+.portfolio-page-footer--splash {
+  background: none;
+  color: $portfolio-splash-screen-color;
   text-align: center;
-  padding: calc(25px - 0.5ex);
 }
 
 .portfolio-page-content {
   color: $portfolio-page-content-color;
   background: $portfolio-page-content-background;
-  margin-top: 50px;
-  padding: 12.5px 25px;
+  padding: 0 25px 50px 25px;
   position: relative;
-  border-top: 1px solid $portfolio-page-header-background;
-  height: calc(100% - 220px);
-  overflow-y: scroll;
 }

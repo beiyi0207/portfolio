@@ -1,9 +1,13 @@
 {{#if view.mainNavOpen}}
+<div class="portfolio-main-nav__background"></div>
 <ul class="portfolio-main-nav__list">
   {{#each view.navItems}}
   <li class="portfolio-main-nav__item">
-    <a href="{{link}}" class="portfolio-main-nav__link" aria-label="{{name}}">
-      <span class="{{icon}}"></span>
+    <a href="{{link}}" class="portfolio-main-nav__link">
+      <span class="portfolio-main-nav__icon">
+        <span class="{{icon}}"></span>
+      </span>
+      <span class="portfolio-main-nav__label">{{name}}</span>
     </a>
   </li>
   {{/each}}

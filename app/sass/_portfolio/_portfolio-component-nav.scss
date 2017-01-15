@@ -12,43 +12,119 @@
 .portfolio-main-nav {
   z-index: 200;
   position: fixed;
-  bottom: 40px;
-  right: 35px;
+  bottom: 15px;
+  right: 22.5px;
+  text-align: right;
+}
+
+.portfolio-main-nav--splash {
+  position: relative;
+  bottom: initial;
+  right: initial;
+}
+
+.portfolio-main-nav__background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $main-nav-active-background;
+  opacity: 0.5;
+  z-index: -20;
 }
 
 .portfolio-main-nav__toggle {
   font-size: 0.9em;
   color: $portfolio-button-color;
   background: $portfolio-button-background;
+  box-shadow: 2px 2px 5px #999;
   border: none;
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   @include prefixer(border-radius, 50%, ("webkit", "moz"));
+  z-index: 20;
 }
 
 .portfolio-main-nav__list {
   list-style: none;
   padding: 0;
+  z-index: 20;
+}
+
+.portfolio-main-nav__list--splash {
+  @include flexbox;
+  @include flex-direction($value: row-reverse);
+  @include justify-content($value: center);
 }
 
 .portfolio-main-nav__item {
-  margin: 20px 0;
-  width: 50px;
-  height: 50px;
-  background: $portfolio-icon-background;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 20px 0 20px 9px;
+}
+
+.portfolio-main-nav__item--splash {
+  margin: 0 10px;
 }
 
 .portfolio-main-nav__link {
-  color: $portfolio-icon-color;
-  width: 100%;
-  height: 100%;
-  font-size: 1.2em;
+  @include flexbox;
+  @include flex-direction($value: row-reverse);
+  @include align-items($value: center);
+}
+
+.portfolio-main-nav__link--splash {
+  @include flex-direction($value: column);
+}
+
+.portfolio-main-nav__icon {
+  width: 35px;
+  height: 35px;
+  background: $portfolio-icon-background;
+  @include prefixer(border-radius, 50%, ("webkit", "moz"));
+  @include flexbox;
+  @include align-items($value: center);
+  @include justify-content($value: center);
+  box-shadow: 2px 2px 5px #999;
+
+  & span {
+    color: $portfolio-icon-color;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+.portfolio-main-nav__icon--splash {
+  width: 45px;
+  height: 45px;
+
+  & span {
+    font-size: 1em;
+    padding-top: 14px;
+  }
+}
+
+.portfolio-main-nav__label {
+  background: #fff;
+  box-shadow: 2px 2px 5px #999;
+  @include prefixer(border-radius, 5px, ("webkit", "moz"));
+  color: $portfolio-default-color;
+  font-size: 0.9em;
+  line-height: 2;
+  text-align: right;
+  padding: 0 8px;
+  margin: 0 8px;
+}
+
+.portfolio-main-nav__label--splash {
+  color: $portfolio-splash-screen-color;
+  background: none;
+  box-shadow: none;
   text-align: center;
-  position: relative;
-  top: 1.5ex;
+  padding: 0;
 }

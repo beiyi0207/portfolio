@@ -13,9 +13,11 @@ handlebarsHelpers(Handlebars);
 
 // Views
 var PortfolioLayoutPerspective = require('./PortfolioLayoutPerspective'),
+    PortfolioHomeView = require('./PortfolioHomeView'),
     PortfolioBioView = require('./PortfolioBioView'),
     PortfolioGalleryView = require('./PortfolioGalleryView'),
     PortfolioBlogView = require('./PortfolioBlogView'),
+    PortfolioAboutView = require('./PortfolioAboutView'),
     mainNavView = require('./portfolioMainNavView');
 
 /**
@@ -26,10 +28,11 @@ var PortfolioLayoutPerspective = require('./PortfolioLayoutPerspective'),
  */
 var portfolioMain = new (PerspectiveRouter.extend({
   routes: {
-    '(/)':  '_bioPerspective',
+    '(/)':  '_homePerspective',
     'bio': '_bioPerspective',
     'gallery': '_galleryPerspective',
-    'blog': '_blogPerspective'
+    'blog': '_blogPerspective',
+    'about': '_aboutPerspective'
   },
 
   /**
@@ -99,6 +102,17 @@ var portfolioMain = new (PerspectiveRouter.extend({
   },
 
   /**
+   * Use the Home View
+   *
+   * @method _homePerspective
+   * @private
+   */
+  _homePerspective: function() {
+    this._homeView = new PortfolioHomeView();
+    this._switchPerspectives(this._homeView);
+  },
+
+  /**
    * Use the Bio View
    *
    * @method _bioPerspective
@@ -129,6 +143,17 @@ var portfolioMain = new (PerspectiveRouter.extend({
   _blogPerspective: function() {
     this._blogView = new PortfolioBlogView();
     this._switchPageContent(this._blogView, 'Blog');
+  },
+
+  /**
+   * Use the About View
+   *
+   * @method _aboutPerspective
+   * @private
+   */
+  _aboutPerspective: function() {
+    this._aboutView = new PortfolioAboutView();
+    this._switchPageContent(this._aboutView, 'Blog');
   }
 }))();
 

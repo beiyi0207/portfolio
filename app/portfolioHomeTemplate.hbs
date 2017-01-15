@@ -1,0 +1,28 @@
+<header class="portfolio-page-header portfolio-page-header--splash">
+  <h1 class="portfolio-page-header__author-name portfolio-page-header__author-name--splash">
+    {{view.authorName}}
+  </h1>
+
+  <div class="portfolio-page-header__author-photo portfolio-page-header__author-photo--splash">
+    <img src="{{view.authorPhoto}}" alt="Photo of {{view.authorName}}">
+  </div>
+</header>
+
+<nav class="portfolio-main-nav portfolio-main-nav--splash">
+  <ul class="portfolio-main-nav__list portfolio-main-nav__list--splash">
+    {{#each view.navItems}}
+    <li class="portfolio-main-nav__item portfolio-main-nav__item--splash">
+      <a href="{{link}}" class="portfolio-main-nav__link portfolio-main-nav__link--splash">
+        <span class="portfolio-main-nav__icon portfolio-main-nav__icon--splash">
+          <span class="{{icon}}"></span>
+        </span>
+        <span class="portfolio-main-nav__label portfolio-main-nav__label--splash">{{name}}</span>
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</nav>
+
+<footer class="portfolio-page-footer portfolio-page-footer--splash">
+  ©2017 All rights reserved.
+</footer>
