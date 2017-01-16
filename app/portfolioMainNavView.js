@@ -7,10 +7,16 @@ var MainNavView = require('./widgets/main-nav/MainNavView');
 module.exports = new (MainNavView.extend({
   navItems: [
     {
-      name: 'About',
-      id: 'about',
-      link: '#about',
-      icon: 'icon-info2'
+      name: 'Bio',
+      id: 'bio',
+      link: '#bio',
+      icon: 'icon-user'
+    },
+    {
+      name: 'Showcase',
+      id: 'showcase',
+      link: '#showcase',
+      icon: 'icon-pictures'
     },
     {
       name: 'Blog',
@@ -19,16 +25,10 @@ module.exports = new (MainNavView.extend({
       icon: 'icon-write'
     },
     {
-      name: 'Gallery',
-      id: 'gallery',
-      link: '#gallery',
-      icon: 'icon-pictures'
-    },
-    {
-      name: 'Bio',
-      id: 'bio',
-      link: '#bio',
-      icon: 'icon-user'
+      name: 'About',
+      id: 'about',
+      link: '#about',
+      icon: 'icon-info2'
     }
   ]
 }))();

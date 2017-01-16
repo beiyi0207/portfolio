@@ -15,7 +15,7 @@ handlebarsHelpers(Handlebars);
 var PortfolioLayoutPerspective = require('./PortfolioLayoutPerspective'),
     PortfolioHomeView = require('./PortfolioHomeView'),
     PortfolioBioView = require('./PortfolioBioView'),
-    PortfolioGalleryView = require('./PortfolioGalleryView'),
+    PortfolioShowcaseView = require('./PortfolioShowcaseView'),
     PortfolioBlogView = require('./PortfolioBlogView'),
     PortfolioAboutView = require('./PortfolioAboutView'),
     mainNavView = require('./portfolioMainNavView');
@@ -30,7 +30,7 @@ var portfolioMain = new (PerspectiveRouter.extend({
   routes: {
     '(/)':  '_homePerspective',
     'bio': '_bioPerspective',
-    'gallery': '_galleryPerspective',
+    'showcase': '_showcasePerspective',
     'blog': '_blogPerspective',
     'about': '_aboutPerspective'
   },
@@ -124,14 +124,14 @@ var portfolioMain = new (PerspectiveRouter.extend({
   },
 
   /**
-   * Use the Gallery View
+   * Use the Showcase View
    *
    * @method _galleryPerspective
    * @private
    */
-  _galleryPerspective: function() {
-    this._galleryView = new PortfolioGalleryView();
-    this._switchPageContent(this._galleryView, 'Gallery');
+  _showcasePerspective: function() {
+    this._showcaseView = new PortfolioShowcaseView();
+    this._switchPageContent(this._showcaseView, 'Showcase');
   },
 
   /**

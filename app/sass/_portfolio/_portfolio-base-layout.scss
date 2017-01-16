@@ -43,6 +43,12 @@ html, body {
   text-align: center;
 }
 
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-page-header--splash {
+    margin: 5% 0;
+  }
+}
+
 .portfolio-page-header__author {
   @include flexbox;
   @include align-items($value: center);
@@ -66,6 +72,12 @@ html, body {
   margin: 0 auto;
 }
 
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-page-header__author-photo--splash {
+    width: 20%;
+  }
+}
+
 .portfolio-page-header__author-name {
   margin-left: 1em;
 
@@ -79,6 +91,13 @@ html, body {
   margin: 25px 0;
   font-size: 1.5em;
   text-transform: uppercase;
+}
+
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-page-header__author-name--splash {
+    margin: 12.5px 0;
+    font-size: 1.25em;
+  }
 }
 
 .portfolio-page-header__icon {
@@ -111,9 +130,17 @@ html, body {
 }
 
 .portfolio-page-footer--splash {
+  position: absolute;
+  bottom: 0;
   background: none;
   color: $portfolio-splash-screen-color;
   text-align: center;
+}
+
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-page-footer--splash {
+    position: relative;
+  }
 }
 
 .portfolio-page-content {

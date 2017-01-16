@@ -23,6 +23,15 @@
   right: initial;
 }
 
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-main-nav--splash {
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
 .portfolio-main-nav__background {
   position: fixed;
   top: 0;
@@ -35,6 +44,9 @@
   opacity: 0.5;
   z-index: -20;
 }
+
+
+
 
 .portfolio-main-nav__toggle {
   font-size: 0.9em;
@@ -49,25 +61,56 @@
   z-index: 20;
 }
 
+
+
+
 .portfolio-main-nav__list {
   list-style: none;
   padding: 0;
   z-index: 20;
-}
-
-.portfolio-main-nav__list--splash {
   @include flexbox;
-  @include flex-direction($value: row-reverse);
+  @include flex-direction($value: column-reverse);
   @include justify-content($value: center);
 }
 
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-main-nav__list {
+    @include flex-direction($value: row-reverse);
+    position: fixed;
+    right: 85px;
+    bottom: 10px;
+    margin: 0;
+  }
+}
+
+.portfolio-main-nav__list--splash {
+  @include flex-direction($value: row);
+  position: initial;
+  right: initial;
+  bottom: initial;
+  margin: 0;
+}
+
+
+
+
 .portfolio-main-nav__item {
-  margin: 20px 0 20px 9px;
+  margin: 10px 0 10px 9px;
+}
+
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-main-nav__item {
+    margin: 10px;
+  }
 }
 
 .portfolio-main-nav__item--splash {
   margin: 0 10px;
+  width: 55px;
 }
+
+
+
 
 .portfolio-main-nav__link {
   @include flexbox;
@@ -78,6 +121,9 @@
 .portfolio-main-nav__link--splash {
   @include flex-direction($value: column);
 }
+
+
+
 
 .portfolio-main-nav__icon {
   width: 35px;
@@ -109,6 +155,9 @@
   }
 }
 
+
+
+
 .portfolio-main-nav__label {
   background: #fff;
   box-shadow: 2px 2px 5px #999;
@@ -121,7 +170,14 @@
   margin: 0 8px;
 }
 
+@media screen and (max-height: $small-screen-landscape-height)  {
+  .portfolio-main-nav__label {
+    display: none;
+  }
+}
+
 .portfolio-main-nav__label--splash {
+  display: block;
   color: $portfolio-splash-screen-color;
   background: none;
   box-shadow: none;
